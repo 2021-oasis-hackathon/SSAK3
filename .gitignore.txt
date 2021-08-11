@@ -8,9 +8,11 @@
 .DS_Store
 .vscode
 __pycache__/
+__pycache__
 
 WEB/baroProject/db.sqlite3
 **/db.sqlite3
+db.sqlite3
 
 **/migrations/**
 !**/migrations
