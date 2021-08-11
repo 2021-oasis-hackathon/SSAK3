@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'accountapp/login.css' %}" type="text/css"> 
+{% endblock %}
+
+{% block content %}
+    <h1>여기는 첫 화면 입니다.</h1>
+    <div>
+        <button>회원 로그인</button>
+        <button>사장님 로그인</button>
+    </div>
+    <h2>주변 음식점 보기</h2>
+    {% for restaurant in restaurants %}
+        <a href="{% url 'userApp:detail' restaurant.pk %}">
+            <div>
+                {{restaurant.name}} : {{restaurant.style}}<br>
+                {{restaurant.review}}   {{restaurant.star}}<br>
+            </div>
+        </a>
+    {% endfor %}
+
+{% endblock %}
