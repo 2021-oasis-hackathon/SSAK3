@@ -10,7 +10,24 @@
     <div>
         <button>회원 로그인</button>
         <button>사장님 로그인</button>
+        <button>테스트</button>
+       <div class="intro_bg">
+           <div class="header">
+               <div class="searchArea">
+                   <input type="search" placeholder="Search">
+                   <ul class="nav">
+                    <li>HOME</li>
+                    <li>ABOUT</li>
+                    <li>SERVICE</li>
+                    <li>CONTACT</li>
+                   </ul>
+               </div>
+
+           </div>
+
+       </div>
     </div>
+
     <h2>주변 음식점 보기</h2>
     {% for restaurant in restaurants %}
         <a href="{% url 'userApp:detail' restaurant.pk %}">
