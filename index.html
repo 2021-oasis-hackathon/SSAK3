@@ -1,9 +1,8 @@
 <!doctype html>
 <html lang="ko">
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href=".\style.css" type="text/css">
         <script src="https://kit.fontawesome.com/b0f29e9bfe.js" corssorigin="anonymous"></script>
-
     </head>
     <body>
 
@@ -32,20 +31,23 @@
                
                <ul class="icons">
                    <li>
-                       <div class="icon_img"></div>
-                        <div class="content_bold"><a href="#">판매자</a></div>
+                       <a href="{%  url 'accountApp:login' 2 %}">
+                        <div class="icon_img"></div>
+                        <div class="content_bold">판매자</div>
                         <i class="fas fa-minus"></i>
-                       <div class="content2">판매자는 솥을 통해 수요량을 조사하고, 신선한 농작물을 판매할 수 있습니다.</div>
-                   </li>
+                        <div class="content2">판매자는 솥을 통해 수요량을 조사하고, 신선한 농작물을 판매할 수 있습니다.</div>
+                        </a>
+                    </li>
 
                    
                    <li>
-                    <div class="icon2_img"></div>
-                    <div class="content_bold"><a href="#">구매자</a></div>
-                    <i class="fas fa-minus"></i>
-                    <div class="content2">구매자는 솥을 통해 간편하게 농작물을 주문하고, 갓 생산된 농작물을 받아보실 수 있습니다.</div>
-                   </li>
-
+                       <a href="{%  url 'accountApp:login' 1 %}">
+                            <div class="icon2_img"></div>
+                            <div class="content_bold">구매자</div>
+                            <i class="fas fa-minus"></i>
+                            <div class="content2">구매자는 솥을 통해 간편하게 농작물을 주문하고, 갓 생산된 농작물을 받아보실 수 있습니다.</div>
+                        </a>   
+                    </li>
                </ul>
             </div>
             
