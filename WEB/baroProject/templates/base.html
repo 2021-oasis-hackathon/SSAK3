@@ -4,20 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>음식추천서비스 바로</title>
+    <title>SOT by SSAK3</title>
     <link rel="stylesheet" href="{% static 'base.css' %}" type="text/css">
     {% block style %}
     {% endblock %}
 </head>
 <body>
     <div id='nav'>
+        <a href="{% url 'userApp:home' %}">로고위치 누르면 홈으로 가요</a>
+
         {% if user.is_authenticated %}
         <!-- 로그인 한 사용자 -->
             <li>>기능1</a></li>
             <li>기능2</li>
             <li>기능3</li>
             <li>
-                <form action="" method="POST">
+                <form action="{% url 'accountApp:logout' %}" method="POST">
                     {% csrf_token %}
                     <input type="hidden" name="path" value="{{request.path}}">
                     <button id='log_out'type = submit>로그아웃</button>
@@ -25,11 +27,10 @@
             </li>
         {% else %}
             <!-- 로그인하지 않은 사용자 -->
-            <!-- <li>>Log-In</a></li> -->
             <li>기능1</li>
-            <li>기능2</a></li>
+            <li>기능2</li>
             <li>기능3</li>
-            <li>로그인</li>
+            <li><a href="{% url 'accountApp:signup' %}">회원가입</a></li>
         {% endif %}
     </div>
 

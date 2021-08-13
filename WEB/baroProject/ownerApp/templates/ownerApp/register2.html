@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+    <h1>ownerApp 판매자 등록</h1>
+    <h2>스토어 정보 입력</h2>
+    <form action="{% url 'ownerApp:register2' %}" method="POST">
+        {%csrf_token%}
+        스토어이름 
+        <input type="text" name="store_name" required><br>
+        스토어 url
+        <input type="text" name="store_url" required><br>
+        소개글
+        <input type="text" name="store_intro" required><br>
+        고객센터 전화번호
+        <input type="text" name="store_tel" required><br>
+        상품 카테고리
+        <select name="category" required>
+            <option value="채소/야채">채소/야채</option>
+            <option value="과일">과일</option>
+            <option value="곡류">곡류</option>
+        </select><br>
+        배송정보 입력
+        <input type="text" name="store_address" required><br>
+        정산 입금 계좌
+        <input type="text" name="store_account" required><br>
+        <button type="submit">등록</button>
+    </form>
+
+{% endblock %}

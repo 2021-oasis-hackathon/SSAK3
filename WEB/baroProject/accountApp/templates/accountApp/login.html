@@ -12,6 +12,7 @@
         {{ error }}
     </div>
     {% endif %}
+<<<<<<< HEAD
     <h1>로그인 페이지 입니다.</h1>
     
       
@@ -20,22 +21,36 @@
     <br>
     <div id='login_box'>
         <form action="" method="POST">
+=======
+    <h1>{% if usertype == 1 %}생산자 {% elif usertype == 2 %}소비자 {% endif %}로그인 페이지 입니다.</h1>
+    <div>
+        {{usertype}}
+        {% if usertype == 1 %}
+        <form action="{% url 'accountApp:login' 1 %}" method="POST">
+        {% elif usertype == 2 %}
+        <form action="{% url 'accountApp:login' 2 %}" method="POST">  
+        {% endif %}
+>>>>>>> bacffa0648aabef0534ddebaadd14adf0c24a247
             {% csrf_token %}
             <h3>LOGIN</h3>
             <div>
-                {% comment %} <label class='log_lb' for="username">아이디</label> {% endcomment %}
+                <label class='log_lb' for="username">아이디</label>
                 <input type="text" id = 'username' placeholder="아이디" name="username">
             </div>
             <div >
-                {% comment %} <label class='log_lb' for="password">비밀번호</label> {% endcomment %}
+                <label class='log_lb' for="password">비밀번호</label>
                 <input type="password" id='password' placeholder="비밀번호" name="password">
             </div>
-            <input type="hidden" name="next" value="{{ next }}">
+            {% if usertype == 1 %}
+                <input type= "hidden" name="usertype" value=1>
+            {% elif usertype == 2 %}
+                <input type= "hidden" name="usertype" value=2>    
+            {% endif %}
             <button type="submit">로그인</button>
         </form>
-        <div class="account">
+        <div>
             Don't have account?
-            <a href="">Signup Now</a>
+            <a href="{% url 'accountApp:signup' %}">Signup Now</a>
         </div>
-    </div> -->
+    </div>
 {% endblock %}
