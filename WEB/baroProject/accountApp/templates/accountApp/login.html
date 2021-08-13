@@ -12,16 +12,6 @@
         {{ error }}
     </div>
     {% endif %}
-<<<<<<< HEAD
-    <h1>로그인 페이지 입니다.</h1>
-    
-      
-    <!-- <br>
-    <br>
-    <br>
-    <div id='login_box'>
-        <form action="" method="POST">
-=======
     <h1>{% if usertype == 1 %}생산자 {% elif usertype == 2 %}소비자 {% endif %}로그인 페이지 입니다.</h1>
     <div>
         {{usertype}}
@@ -30,7 +20,6 @@
         {% elif usertype == 2 %}
         <form action="{% url 'accountApp:login' 2 %}" method="POST">  
         {% endif %}
->>>>>>> bacffa0648aabef0534ddebaadd14adf0c24a247
             {% csrf_token %}
             <h3>LOGIN</h3>
             <div>
