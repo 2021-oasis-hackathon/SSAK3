@@ -7,8 +7,9 @@
 {% block content %}
     <h1>ownerapp 첫 화면 입니다.</h1>
     <div>
-        <button>내 식당 관리하기</button>
-        <button>내 식당 등록하기</button>
+        <a href="{% url 'ownerApp:manage' %}">판매자 등록</a>
+        <a href="{% url 'ownerApp:register' %}">판매 스토어 관리</a>
+        <a href="{% url 'ownerApp:help' %}">농산물 생산지원 기능</a>
     </div>
 
 {% endblock %}

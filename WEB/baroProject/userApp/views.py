@@ -4,9 +4,11 @@ from .models import Restaurant
 
 # Create your views here.
 def home(request):
-    restaurants = Restaurant.objects.all()
+    return render(request, 'userApp/home.html')
 
-    return render(request, 'userApp/home.html',{'restaurants' : restaurants})
+def main(request):
+    restaurants = Restaurant.objects.all()
+    return render(request, 'userApp/main.html',{'restaurants' : restaurants} )
 
 def detail(request, pk):
     object = Restaurant.objects.get(pk=pk)
@@ -18,4 +20,4 @@ def detail(request, pk):
 
 def reservation(request, pk):
     context={'pk' : pk}
-    return render(request, 'userApp/reservation.html', context)
+    return HttpResponse('즐겨찾기 기능 만들기')

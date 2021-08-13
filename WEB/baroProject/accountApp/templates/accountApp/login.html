@@ -11,9 +11,14 @@
         {{ error }}
     </div>
     {% endif %}
-    <h1>로그인 페이지 입니다.</h1>
+    <h1>{% if usertype == 1 %}생산자 {% elif usertype == 2 %}소비자 {% endif %}로그인 페이지 입니다.</h1>
     <div>
-        <form action="{% url 'accountApp:login' %}" method="POST">
+        {{usertype}}
+        {% if usertype == 1 %}
+        <form action="{% url 'accountApp:login' 1 %}" method="POST">
+        {% elif usertype == 2 %}
+        <form action="{% url 'accountApp:login' 2 %}" method="POST">  
+        {% endif %}
             {% csrf_token %}
             <h3>LOGIN</h3>
             <div>
@@ -24,6 +29,11 @@
                 <label class='log_lb' for="password">비밀번호</label>
                 <input type="password" id='password' placeholder="비밀번호" name="password">
             </div>
+            {% if usertype == 1 %}
+                <input type= "hidden" name="usertype" value=1>
+            {% elif usertype == 2 %}
+                <input type= "hidden" name="usertype" value=2>    
+            {% endif %}
             <button type="submit">로그인</button>
         </form>
         <div>

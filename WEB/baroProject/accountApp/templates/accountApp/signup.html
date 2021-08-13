@@ -31,15 +31,15 @@
             </div>
             <div >
                 <label for="usertype">유형선택</label> 
-                <input type="radio" name='usertype' value="사장님">사장님
-                <input type="radio" name='usertype' value="사용자"> 사용자
+                <input type="radio" name='usertype' value="생산자">생산자
+                <input type="radio" name='usertype' value="소비자">소비자
             </div>
                 
             <button type="submit">회원가입</button>
         </form>
         <div class="account">
             Already have account?
-            <a href="{% url 'accountApp:login' %}">Login Now</a>
+            <a href="{% url 'userApp:home' %}">Login Now</a>
         </div>
     </div>
 {% endblock %}
