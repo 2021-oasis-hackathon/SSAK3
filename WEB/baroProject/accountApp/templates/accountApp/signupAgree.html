@@ -2,13 +2,97 @@
 {% load static %}
 
 {% block style %}
+<style>
+    .main_box{
+        width:100%;
+        height:1600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .container{
+        top: 686px;
+        left: 428px;
+        width: 1064px;
+        height: 327px;
+        background-color: aqua;
+         background: transparent url('../../../static/img/agree.png') 0% 0% no-repeat padding-box;
+        opacity: 1;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: #FFFFFF;
+        font-size:50px;
+
+    }
+    .container2{
+        width: 1064px;
+        height: 1221px;
+        /* background: transparent url('img/패스 6.png') 0% 0% no-repeat padding-box; */
+        background-color:#FFFFFF;
+        box-shadow: 0px 7px 20px #00000029;
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .buttonbox{
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+    .btnbox{
+        top: 2051px;
+        left: 978px;
+        width: 327px;
+        height: 76px;
+        /* background: transparent url('img/사각형 33.png') 0% 0% no-repeat padding-box; */
+        background-color: #629DD9;
+        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 38px;
+        opacity: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:#FFFFFF;
+        font-size: 20px;
+
+    }
+</style>
 {% endblock %}
 
 {% block content2 %}
 <h1>약관에 동의해 주세요</h1>
+<br>
+<br>
 <h4>솥은 사용자의 체계적인 정보 관리를 위해 약관동의를 원칙으로 하고 있습니다. 이용 약관을 읽고 동의하셔야 회원가입 절차가 진행됩니다.</h4>
+<br>
+<br>
+<div class="main_box">
+    <div class="container">
+       약관 동의
+    </div>
+    <div class="container2">
+        <div class="imgcontainer" style="width: 300PX;width: 300PX;background-color: blue;">
+            <img src="" alt="이용약관">
+        </div>
+       <div class="buttonbox">
+           <a href="{% url 'accountApp:signup' 1 %}"><div class="btnbox">판매자 회원가입</div></a>
+           <a href="{% url 'accountApp:signup' 2 %}"><div class="btnbox">구매자 회원가입</div></a>
+       </div>
+    </div>
+   
+   </div>
 {% endblock %}
 
 {% block content %}
+
     
 {% endblock %}

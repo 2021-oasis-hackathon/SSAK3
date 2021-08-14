@@ -6,7 +6,7 @@ from .models import info
 
 # Create your views here.
 
-def signup(request):
+def signup(request, usertype):
     context={}
     # POST Method
     if request.method == "POST":
@@ -21,21 +21,17 @@ def signup(request):
                 username = username,
                 password = password,
             )
-            # 로그인후 home을 redirect
-            auth.login(request, new_user)
             new_info=info.objects.create(
-                user=User.objects.get(username = request.user.get_username()),
+                user=User.objects.get(username = username),
                 usertype = request.POST['usertype'],
                 )
 
-            if usertype == "생산자" :
-                return redirect('ownerApp:main')
-            elif usertype == "소비자" :  
-                return redirect('userApp:home')
+            return redirect('accountApp:signupSuccess')
         else:
             context['error'] = "아이디와 비밀번호를 다시 확인해주세요."
 
     # GET Method
+    context['usertype'] = usertype
     return render(request, 'accountApp/signup.html', context)
 
 
@@ -55,10 +51,11 @@ def login(request, usertype):
             if user is not None:
                 # 사용자가 있으면 로그인후 home으로
                 auth.login(request, user)
-                ut = info.objects.get(user=user).usertype
-                if ut =="생산자": ut = 1
-                elif ut =="소비자" : ut=2
+                ut = int(info.objects.get(user=user).usertype)
+                # if (ut =="판매자" or ut==1): ut = 1
+                # elif ut =="구매자" or ut ==2 : ut=2
                 if ut != usertype:
+                    auth.logout(request)
                     context['error'] = "로그인 유형을 다시 선택하세요."
                     print("유저홈")
                     return redirect('userApp:home')
@@ -85,10 +82,14 @@ def login(request, usertype):
 def logout(request):
     if request.method == "POST":
         auth.logout(request)
-    # 로그아웃하면 홈으로
-    # return redirect("mainapp:home")
     # 로그아웃하면 이전 페이지로
-    return redirect(request.POST['path'])
+    #return redirect(request.POST['path'])
+    # 로그아웃하면 홈으로
+    return redirect("mainapp:home")
+   
 
 def signupAgree(request):
     return render(request, 'accountApp/signupAgree.html')
+
+def signupSuccess(request):
+    return render(request, 'accountApp/signupSuccess.html')
