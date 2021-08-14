@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOT by SSAK3</title>
+    <link rel="stylesheet" href="basic.css" type="text/css">
+    <script src="https://kit.fontawesome.com/b0f29e9bfe.js" corssorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="intro_bg">
+            <div class="header">
+                <ul class="nav">
+                    <!-- {% if user.is_authenticated %}-->
+                    <!-- 로그인 한 사용자 -->
+                    <!--<li>
+                        <form action="{% url 'accountApp:logout' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="path" value="{{request.path}}">
+                            <button id = logout type = submit>Log out</a>
+                        </form>
+                    </li> -->
+                    <li><a href="#"><i class="fas fa-bars"></i></a></li>
+                    <!-- {% else %} -->
+                    <li><a href="{% url 'userApp:home' %}">Log in</a></li>
+                    <li><a href="{% url 'accountApp:signupAgree' %}">Sign up</a></li>
+                    <li><a href="#"><i class="fas fa-bars"></i></a></li>
+                    <!-- {% endif %} -->
+                </ul>
+            </div>
+            <div class="intro_text">
+                <!-- {% block content2 %} -->
+                <!--여기에 메인(?)글씨 h1, h4-->
+                <h1>H1문구 여기에</h1>
+                <br>
+                <h4>h4 문구 여기에</h4>
+                <!-- {% endblock %} -->
+            </div>
+                <!-- {% block content %} -->
+                <!--여기에 네모박스(?) 내용-->
+                메인내용 여기에
+                <!-- {% endblock %} -->
+        </div>
+    </div>
+    <a href="" clasas="navbar_tooglBtn"></a>
+    <i class="fas fa-bars"></i>
+</body>
+</html>
