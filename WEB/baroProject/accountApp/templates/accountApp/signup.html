@@ -4,9 +4,19 @@
 {% block style %}
 {% endblock %}
 
+{% block content2 %}
+<h1>회원정보 입력 및 본인인증을 완료해주세요</h1>
+<br>
+<h4>본인확인을 위한 절차이며, 다른 용도로 사용되지 않습니다.<br>
+판매자의 경우 사업자등록 인증을 완료해야 서비스를 이용할 수 있습니다.</h4>
+{% endblock %}
+
 {% block content %}
+
+
     {% if error %}
     <div>
+        <!-- 비밀번호랑 비밀번호 확인이 다를때 안내 메시지 뜨는 곳 신경x -->
         {{ error }}
     </div>
     {% endif %}
@@ -52,4 +62,5 @@
             <a href="{% url 'userApp:home' %}">Login Now</a>
         </div>
     </div>
+
 {% endblock %}
