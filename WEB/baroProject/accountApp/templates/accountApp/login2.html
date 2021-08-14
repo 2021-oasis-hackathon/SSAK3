@@ -36,7 +36,12 @@
                         <li><input type="text" id = 'username' placeholder="아이디" name="username"></li>
                         <li><input type="password" id='password' placeholder="비밀번호" name="password"></li>
                         <li><button type="submit">로그인하기</button></li>
+                        <div class="account">
+                            아직 회원이 아니신가요?
+                            <a href="{% url 'accountApp:signupAgree' %}">Signup Now</a>
+                        </div>
                     </ul>
+                    
                 </div>
 
             </div>
@@ -45,11 +50,10 @@
             {% elif usertype == 2 %}
                 <input type= "hidden" name="usertype" value=2>    
             {% endif %}
+
+            
            
         </form>
-        <div class="account">
-            아직 회원이 아니신가요?
-            <a href="{% url 'accountApp:signupAgree' %}">Signup Now</a>
-        </div>
+        
     </div>
 {% endblock %}'
