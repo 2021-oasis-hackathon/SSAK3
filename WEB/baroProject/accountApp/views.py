@@ -77,7 +77,7 @@ def login(request, usertype):
     print("설마여기")
     print(usertype)
     context['usertype'] = usertype
-    return render(request, 'accountApp/login.html', context)
+    return render(request, 'accountApp/login2.html', context)
 
 def logout(request):
     if request.method == "POST":
@@ -85,7 +85,7 @@ def logout(request):
     # 로그아웃하면 이전 페이지로
     #return redirect(request.POST['path'])
     # 로그아웃하면 홈으로
-    return redirect("mainapp:home")
+    return redirect("userApp:home")
    
 
 def signupAgree(request):
