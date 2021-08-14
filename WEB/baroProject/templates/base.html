@@ -6,39 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOT by SSAK3</title>
     <link rel="stylesheet" href="{% static 'base.css' %}" type="text/css">
+    <script src="https://kit.fontawesome.com/b0f29e9bfe.js" corssorigin="anonymous"></script>
     {% block style %}
     {% endblock %}
 </head>
 <body>
-    <div id='nav'>
-        <a href="{% url 'userApp:home' %}">로고위치 누르면 홈으로 가요</a>
-
-        {% if user.is_authenticated %}
-        <!-- 로그인 한 사용자 -->
-            <li>>기능1</a></li>
-            <li>기능2</li>
-            <li>기능3</li>
-            <li>
-                <form action="{% url 'accountApp:logout' %}" method="POST">
-                    {% csrf_token %}
-                    <input type="hidden" name="path" value="{{request.path}}">
-                    <button id='log_out'type = submit>로그아웃</button>
-                </form>
-            </li>
-        {% else %}
-            <!-- 로그인하지 않은 사용자 -->
-            <li>기능1</li>
-            <li>기능2</li>
-            <li>기능3</li>
-            <li><a href="{% url 'accountApp:signup' %}">회원가입</a></li>
-        {% endif %}
+    <div class="wrap">
+        <div class="intro_bg">
+            <div class="header">
+                <ul class="nav">
+                    {% if user.is_authenticated %}
+                    <!-- 로그인 한 사용자 -->
+                    <li>
+                        <form action="{% url 'accountApp:logout' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="path" value="{{request.path}}">
+                            <button id = logout type = submit>Log out</a>
+                        </form>
+                    </li>
+                    <li><a href="#"><i class="fas fa-bars"></i></a></li>
+                    {% else %}
+                    <!--로그인 안 한 사용자-->
+                    <li><a href="{% url 'userApp:home' %}">Log in</a></li>
+                    <li><a href="{% url 'accountApp:signup' %}">Sign up</a></li>
+                    <li><a href="#"><i class="fas fa-bars"></i></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="intro_text">
+                {% block content2 %}
+                <!--여기에 메인(?)글씨 h1, h4-->
+                {% endblock %}
+            </div>
+                {% block content %}
+                <!--여기에 네모박스(?) 내용-->
+                {% endblock %}
+        </div>
     </div>
-
-    {% block content %}
-    {% endblock %}
-    <div id='bottom'>
-        Oasis hackathon team SSAK3 박승희 이지원 김소형 차지수<br>
-        copyrightⓒ 2021 All rights reserved by SSAK3
-    </div>    
+    <a href="" clasas="navbar_tooglBtn"></a>
+    <i class="fas fa-bars"></i>
 </body>
 </html>

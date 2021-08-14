@@ -89,3 +89,6 @@ def logout(request):
     # return redirect("mainapp:home")
     # 로그아웃하면 이전 페이지로
     return redirect(request.POST['path'])
+
+def signupAgree(request):
+    return render(request, 'accountApp/signupAgree.html')
