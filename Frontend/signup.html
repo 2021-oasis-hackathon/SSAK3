@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="signup.css">
+{% endblock %}
+
+{% block content %}
+    {% if error %}
+    <div>
+        {{ error }}
+    </div>
+    {% endif %}
+    <br>
+    <br>
+    <br>
+    <div id='login_box'>
+        <form action="{% url 'accountApp:signup' %}" method="POST">
+            {% csrf_token %}
+            <div class="sign">
+            <h3>회원정보 입력</h3>
+            <ul class="top">
+               <li><label for="username">아이디</label> 
+                <input type="text" id = 'username' placeholder="띄어쓰기 없는 영문, 숫자로만 6~20자" name="username"></li> 
+            
+            
+               <li> <label for="password">비밀번호</label> 
+                <input type="password" id='password' placeholder="띄어쓰기 없는 영문, 숫자, 특수문자로만 8~12자" name="password"></li>
+            
+            
+                <li><label for="password_check">비밀번호 재확인</label> 
+                <input type="password" id='password_check' placeholder="" name="password_check"></li>
+            </ul>
+            <div class="cap">
+                <img src="ga.jpg">
+                
+            </div>
+            <div class="bu">
+            <button type="submit">가입하기</button>
+        </div>
+        
+        </div>
+            <div >
+                <label for="usertype">유형선택</label> 
+                <input type="radio" name='usertype' value="생산자">생산자
+                <input type="radio" name='usertype' value="소비자">소비자
+            </div>
+                
+            
+        </form>
+        <div class="account">
+            Already have account?
+            <a href="{% url 'userApp:home' %}">Login Now</a>
+        </div>
+    </div>
+{% endblock %}
