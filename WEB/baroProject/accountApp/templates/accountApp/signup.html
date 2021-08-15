@@ -2,6 +2,8 @@
 {% load static %}
 
 {% block style %}
+    <!-- <link rel="stylesheet" type="text/css" href="signup.css"> -->
+    <link rel="stylesheet" href="{% static 'accountApp/signup.css' %}" type="text/css"> 
 {% endblock %}
 
 {% block content2 %}
@@ -12,55 +14,47 @@
 {% endblock %}
 
 {% block content %}
-
-
     {% if error %}
     <div>
-        <!-- 비밀번호랑 비밀번호 확인이 다를때 안내 메시지 뜨는 곳 신경x -->
         {{ error }}
     </div>
     {% endif %}
-    <br>
-    <br>
-    <br>
-    <div>
+    <div id='login_box'>
         {% if usertype == 1%}
         <form action="{% url 'accountApp:signup' 1 %}" method="POST">
         {%  elif usertype == 2%}
         <form action="{% url 'accountApp:signup' 2 %}" method="POST">
         {% endif %}
             {% csrf_token %}
-            <h3>SIGNUP</h3>
-            <div>
-                <label for="username">아이디</label> 
-                <input type="text" id = 'username' placeholder="아이디" name="username" required>
-            </div>
-            <div >
-                <label for="password">비밀번호</label> 
-                <input type="password" id='password' placeholder="비밀번호" name="password" required>
-            </div>
-            <div >
-                <label for="password_check">비밀번호 확인</label> 
-                <input type="password" id='password_check' placeholder="비밀번호 확인" name="password_check" required>
-            </div>
-            <div>
-                이름 성별 본인확인이메일
-                본인인증
-                사업자 등록 -> 이미지로 대체
-            </div>
-            <div >
+            <div class="sign">
+                <h3>회원정보 입력</h3>
+                <ul class="top">
+                <li><label for="username">아이디</label> 
+                    <input type="text" id = 'username' placeholder="띄어쓰기 없는 영문, 숫자로만 6~20자" name="username"></li> 
+                
+                
+                <li> <label for="password">비밀번호</label> 
+                    <input type="password" id='password' placeholder="띄어쓰기 없는 영문, 숫자, 특수문자로만 8~12자" name="password"></li>
+                
+                
+                    <li><label for="password_check">비밀번호 재확인</label> 
+                    <input type="password" id='password_check' placeholder="" name="password_check"></li>
+                </ul>
                 {% if usertype == 1%}
                 <input type="hidden" name='usertype' value=1>
                 {%  elif usertype == 2%}
                 <input type="hidden" name='usertype' value="2">
                 {% endif %}
+                <div class="cap">
+                    <img src="../../../static/img/ga.jpg">
+                    
+                </div>
+                <div class="bu">
+                    <button type="submit">가입하기</button>
+                </div>
             </div>
-            <button type="submit">가입하기</button>
         </form>
-        <div>
-            Already have account?
-            <a href="{% url 'userApp:home' %}">Login Now</a>
-        </div>
+        
     </div>
-
 {% endblock %}
+
