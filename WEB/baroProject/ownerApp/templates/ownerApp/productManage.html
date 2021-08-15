@@ -12,11 +12,11 @@
 
 {% block content %}
 <div style="background-color: aliceblue;">
-    <form action="{% url 'ownerApp:productManage' storepk %}" method="POST">
+    <form action="{% url 'ownerApp:productManage' storepk %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <button type="submit">상품등록</button><br>
         상품명 : <input type="text" name="name" required><br>
-        이미지등록 : <input type="file" name="Thumbnail" accept=".jpeg, .png, .jpg"><br>
+        이미지등록 : <input type="file" name="Thumbnail"><br>
         상품카테고리 :
         <select name="category" required>
             <option value="opt1">opt1</option>

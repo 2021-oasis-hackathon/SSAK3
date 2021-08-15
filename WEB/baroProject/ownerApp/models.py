@@ -49,7 +49,7 @@ class Product(models.Model):
         choices=DELIERY, max_length=30, null=True)
     region = models.CharField(max_length=50, null=True)
 
-    def delete(sef, *args, **kwargs):
+    def delete(self, *args, **kwargs):
         super(Product, self).delete(*args, **kwargs)
         if self.introImage : 
             os.remove(os.path.join(settings.MEDIA_ROOT, self.introImage.path))

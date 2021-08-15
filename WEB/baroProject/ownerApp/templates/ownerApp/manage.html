@@ -21,11 +21,12 @@
         <div>
             {% if products %}
                 {% for pro in products %}
-                    <div>
-                        <div><img src="../../../media/thumimg/carrot_thumb.png" alt=""></div>
+                    <div style="background-color: darkorange;">
+                        <div><img src="../../..{{pro.Thumbnail.url}}"></div>
                         <div>{{pro.name}} | {{pro.salesRate}}</div>
                         <div>주문현황</div>
                     </div>
+                    <br>
                 {% endfor %}
             {% else %}
                 등록된 상품이 없습니다.

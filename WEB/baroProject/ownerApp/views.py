@@ -56,7 +56,7 @@ def manage(request):
     if store == None:
         return redirect("ownerApp/main")
     
-    products =  Product.objects.all()[:3]
+    products =  Product.objects.all()[:5]
     context['products'] = products
     context['store'] = store
 
@@ -70,7 +70,7 @@ def productManage(request, storepk):
             name = request.POST['name'],
             price = request.POST['price'],
             intro = request.POST['intro_text'],
-            Thumbnail = request.POST['Thumbnail'],
+            Thumbnail = request.FILES['Thumbnail'],
             # introImage = request.POST[''],
             # salesRate = request.POST[''],
             category = request.POST['category'],
