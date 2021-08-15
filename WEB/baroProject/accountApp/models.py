@@ -5,4 +5,7 @@ from django.contrib.auth.models import User
 class info(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE,blank=True,null=True)
     usertype=models.CharField(max_length=30)
+
+    def __str__(self):
+        return f'{self.pk} : {self.user} : {self.usertype}'
     

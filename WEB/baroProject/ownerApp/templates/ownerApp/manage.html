@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+{% endblock %}
+
+{% block content2 %}
+    <h1>판매 스토어 관리</h1>
+    <br>
+    <h4>HElloWorld<h4>
+{% endblock %}
+
+{% block content %}
+<div style="background-color: aliceblue;">
+    <div>상품주문칸</div>
+    <div>배송칸</div>
+    <div>취소/환불/교환</div>
+    <div>정산칸</div>
+    <div>
+        <a href="{% url 'ownerApp:productManage'  store.pk  %}">상품 등록/관리</a>
+        <div>
+            {% if products %}
+                {% for pro in products %}
+                    <div>
+                        <div><img src="../../../media/thumimg/carrot_thumb.png" alt=""></div>
+                        <div>{{pro.name}} | {{pro.salesRate}}</div>
+                        <div>주문현황</div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                등록된 상품이 없습니다.
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

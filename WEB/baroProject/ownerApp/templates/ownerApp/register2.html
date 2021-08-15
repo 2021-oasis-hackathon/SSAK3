@@ -26,7 +26,14 @@
         배송정보 입력
         <input type="text" name="store_address" required><br>
         정산 입금 계좌
-        <input type="text" name="store_account" required><br>
+        <select name="bank" required>
+            <option value="농협">농협</option>
+            <option value="국민">국민</option>
+            <option value="신한">신한</option>
+            <option value="기타">기타</option>
+        </select>
+        <input type="text" name="account_name" required placeholder="예금주명"/>
+        <input type="text" name="store_account" required placeholder="계좌번호"><br>
         <button type="submit">등록</button>
     </form>
 

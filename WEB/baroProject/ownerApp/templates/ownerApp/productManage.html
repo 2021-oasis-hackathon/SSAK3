@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+{% endblock %}
+
+{% block content2 %}
+    <h1>상품 등록/관리</h1>
+    <br>
+    <h4>HElloWorld<h4>
+{% endblock %}
+
+{% block content %}
+<div style="background-color: aliceblue;">
+    <form action="{% url 'ownerApp:productManage' storepk %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">상품등록</button><br>
+        상품명 : <input type="text" name="name" required><br>
+        이미지등록 : <input type="file" name="Thumbnail" accept=".jpeg, .png, .jpg"><br>
+        상품카테고리 :
+        <select name="category" required>
+            <option value="opt1">opt1</option>
+            <option value="opt2">opt2</option>
+            <option value="opt3">opt3</option>
+            <option value="opt4">opt4</option>
+        </select><br>
+        예상수확량 : <input type="text" name="expect"><br>
+        가격 : <input type="number" required name="price"> 원 / <input type="text" name="amount"> (기준량)<br>
+        예상수확시기 : <input type="date" name="expectD1" required> ~ <input type="date" name="expectD2" required><br>
+        배송가능기간 : <input type="date" name="deliveryD1" required> ~ <input type="date" name="deliveryD2" required><br>
+        포장방식 : 
+        <select name="deliveryOption" required>
+            <option value="icepack">아이스팩</option>
+            <option value="preimium">신선배송가방</option>
+        </select>
+        출하지역 : <input type="text" name="region"><br>
+        소개글 : <textarea name="intro_text"></textarea><br>
+    </form>
+</div>
+{% endblock %}
