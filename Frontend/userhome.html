@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="userhome.css">
+{% endblock %}
+
+{% block content2 %}
+<h1>소비자 메인화면</h1>
+<br><br>
+<h4>HeIIo</h4>
+{% endblock %}
+
+{% block content %}
+    <div class="wrap">
+        <div class="intro">
+            <div class="header">
+                <ul class="nav">
+                    <li><a href="#">솥</a></li>
+                    <li><a href="#">스토어</a></li>
+                    <li><a href="#">커뮤니티</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    
+
+                </ul>
+                <ul class="searcharea">
+                    <li><input type="search" placeholder="Serach.."></li>
+                    <li><a href="#"><img src="cart.svg"></a></li>
+                    <li><a href="#"><img src="mypage.svg"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+   
+    <!--2-->
+    <div class="main_text0">
+        <ul>
+            <li><div class="q">SHOPPING</div></li>
+            <li><div class="w">금주의 주문량 TOP3</div></li>
+            <li><div class="e">이번 주 회원님들이 가장 많이 찾은 식품을 만나보세요!</div></li>
+        </ul>
+       
+        
+    
+
+
+   <div>
+       <a href="{% url 'userApp:detail' pro.pk %}">
+        <img src="../../..{{pro.Thumbnail.url}}" alt=""><br>
+        <div class="bu">
+            {{pro.name}}<br>
+            {{pro.price}} / {pro.amount}
+        </div>
+        </a>
+    </div>
+
+    <div>
+        <a href="{% url 'userApp:detail' pro.pk %}">
+         <img src="../../..{{pro.Thumbnail.url}}" alt=""><br>
+         <div>
+             {{pro.name}}<br>
+             {{pro.price}} / {pro.amount}
+         </div>
+         </a>
+     </div>
+
+     <div>
+        <a href="{% url 'userApp:detail' pro.pk %}">
+         <img src="../../..{{pro.Thumbnail.url}}" alt=""><br>
+         <div>
+             {{pro.name}}<br>
+             {{pro.price}} / {pro.amount}
+         </div>
+         </a>
+     </div>
+    </div>
+</div>
+ <!--3-->
+    <div class="main_text1">
+
+    </div>
+
+    <!--4-->
+    <div  class="main_text2">
+        <ul>
+            <li><div class="z">STORE</div></li>
+            <li><div class="x">신뢰도 최고 인기농장 TOP2</div></li>
+            <li><div class="c">믿고 사 먹을 수 있는 재구매율 최상위 농장을 만나보세요!</div></li>
+        </ul>
+        
+        <ul class="icons">
+            <li><a href="#"><img src="farm1.png"></a></li>
+            <li><a href="#"><img src="farm2.png"></a></li>
+        </ul>
+       
+    </div>
+   <!--5-->
+   <div class="gray">
+       <div class="ld">
+        <a href="#"><img src="jj.png"></a>
+       </div>
+
+   </div>
+   <!--6-->
+   <div class="zz">
+    <img src="zz.png">
+   </div>
+
+{% endblock %}

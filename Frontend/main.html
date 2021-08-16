@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+    <h1>여기는 소비자 메인 화면입니다.</h1>
+    <h2>주변 음식점 보기</h2>
+    {% for restaurant in restaurants %}
+        <a href="{% url 'userApp:detail' restaurant.pk %}">
+            <div>
+                {{restaurant.name}} : {{restaurant.style}}<br>
+                {{restaurant.review}}   {{restaurant.star}}<br>
+            </div>
+        </a>
+    {% endfor %}
+
+{% endblock %}

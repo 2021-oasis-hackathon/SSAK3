@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+    <h1>음식점 상세 페이지 입니다.</h1>
+    <div>
+        {{object.name}}<br>
+        {{object.stle}}<br>
+        리뷰 수 : {{object.review}} <br>
+        별점 : {{object.star}} <br>
+        위치추가하기 + 데이터 수집<br>
+    </div>
+    <br>
+    <div>
+        <a href="{% url 'userApp:reservation' object.pk %}">즐겨찾기등록</a>
+    </div>
+    <br>
+    <div>
+        <h3>메뉴</h3>
+        <div>
+            <h5>음식이름</h5>
+            10000원
+            <button>장바구니</button>
+            <button>바로결제</button>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h3>리뷰</h3>
+        <div>
+            홍길동  별 3.5<br>
+            알리오올리오가 맛있어요. <br>
+        </div>
+    </div>
+    <br>
+
+{% endblock %}
