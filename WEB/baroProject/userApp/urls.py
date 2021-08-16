@@ -6,6 +6,7 @@ app_name = 'userApp'
 urlpatterns = [
     path('', views.home, name='home'),
     path('main/', views.main, name="main"),
+    path('store/', views.store, name="store"),
     path('detail/<int:pk>', views.detail, name='detail'),
     path('addCart/<int:object_pk>', views.addCart, name='addCart'),
     path('cart/', views.cart, name='cart'),

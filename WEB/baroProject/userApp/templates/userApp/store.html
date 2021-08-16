@@ -1,0 +1,42 @@
+{% extends 'base2.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="text/css" href="../../static/userApp/store.css">
+{% endblock %}
+
+{% block content %}
+
+<!--임시-->
+<div class="second">
+    <img src="{% static 'img/t.png' %}">
+</div>
+<div class="third">
+    <img src="{% static 'img/fff.png' %}">
+</div>
+
+
+
+<!--2-->
+<div class="page">
+    <ul class="icon">
+        <li><a href="#"><img src="{% static 'img/tomato.png' %}"></a></li>
+        <li><a href="#"><img src="{% static 'img/rice.png' %}"></a></li>
+        <li><a href="#"><img src="{% static 'img/egg.png' %}"></a></li>
+
+    </ul>
+    <ul class="icon1">
+        <li><div class="rice"><a href="#"><img src="{% static 'img/mushroom.png' %}"></a></div></li>
+        <li><div class="cheese"><a href="#"><img src="{% static 'img/oil.png' %}"></a></div></li>
+        <li><div class="tomato"><a href="#"><img src="{% static 'img/cheese.png' %}"></a></div></li>
+
+    </ul>
+    <ul class="icon2">
+        <li><div class="rice2"><a href="#"><img src="{% static 'img/melon1.png' %}"></a></div></li>
+        <li><div class="cheese2"><a href="#"><img src="{% static 'img/account1.png' %}"></a></div></li>
+        <li><div class="tomato2"><a href="#"><img src="{% static 'img/apple.png' %}"></a></div></li>
+
+    </ul>
+
+</div>
+{% endblock %}

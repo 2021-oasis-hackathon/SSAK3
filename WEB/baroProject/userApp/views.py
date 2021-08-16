@@ -65,3 +65,7 @@ def pay(request, pay):
     context={}
     context['pay'] = pay
     return render(request, 'userApp/pay.html', context)
+
+def store(request):
+    context={}
+    return render(request, 'userApp/store.html', context)

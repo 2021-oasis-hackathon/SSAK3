@@ -16,11 +16,21 @@
             <div class="header">
                 <ul class="nav">
                     <li><a href="{% url 'userApp:main' %}">솥</a></li>
-                    <li><a href="#">스토어</a></li>
+                    <li><a href="{% url 'userApp:store' %}">스토어</a></li>
                     <li><a href="#">커뮤니티</a></li>
                     <li><a href="#">고객센터</a></li>
                 </ul>
                 <ul class="searcharea">
+                    {% if user.is_authenticated %}
+                    <!-- 로그인 한 사용자 -->
+                    <li>
+                        <form action="{% url 'accountApp:logout' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="path" value="{{request.path}}">
+                            <button id = logout type = submit>Log out</a>
+                        </form>
+                    </li>
+                    {% endif %}
                     <li><input type="search" placeholder="Serach.."></li>
                     <li><a href="{% url 'userApp:cart' %}"><img src="{% static 'img/cart.svg' %}"></a></li>
                     <li><a href="{% url 'userApp:home' %}"><img src="{% static 'img/mypage.svg' %}"></a></li>
