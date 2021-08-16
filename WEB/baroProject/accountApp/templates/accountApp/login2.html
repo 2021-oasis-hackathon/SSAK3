@@ -1,16 +1,23 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 {% load static %}
 
 {% block style %}
     <link rel="stylesheet" href="{% static 'accountApp/login.css' %}" type="text/css"> 
     <!-- <link rel="stylesheet" type="text/css" href="login2.css"> -->
+    <style>
+        .main_text0{
+    top: 747px;
+    width: 1915px;
+    height: 500px;
+    /* background: transparent url('../static/img/square.svg') 0% 0% no-repeat padding-box; */
+    background-color: #F5F5F5;
+    opacity: 1;}
+    </style>
 {% endblock %}
 
 {% block content2 %}
-<h1>로그인</h1>
-{% endblock %}
-
-{% block content %}
+<h1 style="font-size: 70px;">로그인</h1>
+<br><img src="{% static 'img/사각형 22.png' %}"><br><br>
     {% if error %}
     <div>
         {{ error }}
@@ -25,11 +32,13 @@
         <form action="{% url 'accountApp:login' 2 %}" method="POST">  
         {% endif %}
             {% csrf_token %}
-            <h3>LOGIN</h3>
-
            <div class="amount">
                <div class="food">
-                    <img src="../../../static/img/ddd.jpg">
+                    {% if usertype == 1 %}
+                    <img src="../../../static/img/produceerlogin.PNG">
+                    {% elif usertype == 2 %}
+                    <img src="../../../static/img/consumerlogin2.png">
+                    {% endif %}
                </div>
                 <div class="service">
                     <ul>  
@@ -50,10 +59,6 @@
             {% elif usertype == 2 %}
                 <input type= "hidden" name="usertype" value=2>    
             {% endif %}
-
-            
-           
         </form>
-        
     </div>
-{% endblock %}'
+{% endblock %}

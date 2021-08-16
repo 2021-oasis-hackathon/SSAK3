@@ -22,8 +22,8 @@
                 </ul>
                 <ul class="searcharea">
                     <li><input type="search" placeholder="Serach.."></li>
-                    <li><a href="{% url 'userApp:cart' %}"><img src="../static/img/cart.svg"></a></li>
-                    <li><a href="{% url 'userApp:home' %}"><img src="../static/img/mypage.svg"></a></li>
+                    <li><a href="{% url 'userApp:cart' %}"><img src="{% static 'img/cart.svg' %}"></a></li>
+                    <li><a href="{% url 'userApp:home' %}"><img src="{% static 'img/mypage.svg' %}"></a></li>
                 </ul>
             </div>
             <div class ="title">
@@ -40,5 +40,5 @@
     {% block content3 %}
     {% endblock %}
    <!--하단 정보바-->
-   <div class="zz"><img src="../static/img/zz.png"></div>
+   <div class="zz"><img src="{% static 'img/zz.png' %}"></div>
 </body>

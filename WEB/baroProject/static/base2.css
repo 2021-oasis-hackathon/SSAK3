@@ -85,8 +85,9 @@
 .main_text0{
     top: 747px;
     width: 1915px;
-    height: 900px;
-    background: transparent url('../static/img/square.svg') 0% 0% no-repeat padding-box;
+    /* height: 900px; */
+    /* background: transparent url('../static/img/square.svg') 0% 0% no-repeat padding-box; */
+    background-color: #F5F5F5;
     opacity: 1;
 }
 
