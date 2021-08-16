@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+{% endblock %}
+
+{% block content2 %}
+<h1>소비자 장바구니</h1>
+<br><br>
+<h4>HeIIo</h4>
+{% endblock %}
+
+{% block content %}
+<div class="box" style="background-color: aliceblue;">
+    <div>전체산택 선택삭제 네비게이션 바 있는 곳</div>
+    <div> 
+        <!-- 아이템 리스트 있는 곳 -->
+        {% if error %}
+        <div>장바구니에 담긴 상품이 없습니다.</div>
+        {% else %}
+            {% for item in cart_items %}
+                <div>
+                    <img src="" alt="상품이미지">
+                    상품명 : {{item.product.name}}
+                    주문량 : {{item.od_amount}}
+                    가격 : {{item.sub_total}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div>
+        <!-- 총 정보 나오는 곳 -->
+        상품금액 : {{total}}<br>
+        배송비 : {{shippingFee}}<br>
+        결제금액 : {{pay}}<br>
+        <a href="{% url 'userApp:pay' pay %}">결제</a>
+
+    </div>
+</div>
+{% endblock %}

@@ -4,37 +4,44 @@
 {% block style %}
 {% endblock %}
 
-{% block content %}
-    <h1>음식점 상세 페이지 입니다.</h1>
-    <div>
-        {{object.name}}<br>
-        {{object.stle}}<br>
-        리뷰 수 : {{object.review}} <br>
-        별점 : {{object.star}} <br>
-        위치추가하기 + 데이터 수집<br>
-    </div>
-    <br>
-    <div>
-        <a href="{% url 'userApp:reservation' object.pk %}">즐겨찾기등록</a>
-    </div>
-    <br>
-    <div>
-        <h3>메뉴</h3>
-        <div>
-            <h5>음식이름</h5>
-            10000원
-            <button>장바구니</button>
-            <button>바로결제</button>
-        </div>
-    </div>
-    <br>
-    <div>
-        <h3>리뷰</h3>
-        <div>
-            홍길동  별 3.5<br>
-            알리오올리오가 맛있어요. <br>
-        </div>
-    </div>
-    <br>
+{% block content2 %}
+    <h1>상품 상세페이지</h1>
+    <br><br>
+    <h4>HeIIo</h4>
+{% endblock %}
 
+{% block content %}
+    <div class="box">
+        <div class="left">
+
+        </div>
+        <div class="right">
+            {{ object.name }}<br>
+            {{ object.price }} / {{object.amount}}<br>
+            <div class="r_bottom">
+                <div class="intro">
+                    <ul>
+                        <li>주문가능 종량 용량 | {{object.expect}} </li>
+                        <li>예상수확 시기 | {{object.expectD1}} ~ {{object.expectD2}}</li>
+                        <li>배송가능기간 | {{object.deliveryD1}} ~ {{object.deliveryD2}}</li>
+                        <li>포장방식 | {{object.deliveryOption}}</li>
+                        <li>소개글 | {{object.intro}}</li>
+                        <li>후기/평점 | 후기 n개 평점 4.5/5</li>
+                    </ul>
+                </div>
+                <div class="buyoption">
+                    <form action="{% url 'userApp:addCart' object.pk %}" method="POST">
+                        {% csrf_token %}
+                        <ul>
+                            <li>주문량 : <input type="number" name="od_amount" min = 1 required></li>
+                            <li>원하는 배송일 : <input type="date" name="od_date" min={{object.deliveryD1}}, max={{object.deliveryD2}} required></li>
+                            <li>포장방식 : <input type="radio" name="od_deliopt" value={{object.deliveryOption}} checked></li>
+                            <li>요청사항 입력 : <textarea name="od_requests" cols="30" rows="10"></textarea></li>
+                        </ul>
+                        <button type = submit>장바구니 담기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

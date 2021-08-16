@@ -55,6 +55,6 @@ class Product(models.Model):
             os.remove(os.path.join(settings.MEDIA_ROOT, self.introImage.path))
 
     def __str__(self):
-        return f'{self.pk} : {self.store} : {self.name}'
+        return f'{self.pk} : {self.store.store_name} : {self.name}'
 
 # 미디어 파일 참조링크  https://wayhome25.github.io/django/2017/05/10/media-file/
