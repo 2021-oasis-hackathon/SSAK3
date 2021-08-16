@@ -1,26 +1,90 @@
-{% extends 'base.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>솥 by SSAK3</title>
+    <script src="https://kit.fontawesome.com/b0f29e9bfe.js" corssorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../../static/userApp/main.css">
+</head>
 
-{% block style %}
-{% endblock %}
-
-{% block content2 %}
-<h1>소비자 메인화면</h1>
-<br><br>
-<h4>HeIIo</h4>
-{% endblock %}
-
-{% block content %}
-   {% for pro in products%}
-   <div>
-       <a href="{% url 'userApp:detail' pro.pk %}">
-        <img src="../../..{{pro.Thumbnail.url}}" alt=""><br>
-        <div>
-            {{pro.name}}<br>
-            {{pro.price}} / {{pro.amount}}
+<body>
+    <div class="wrap">
+        <div class="intro">
+            <div class="header">
+                <ul class="nav">
+                    <li><a href="{% url 'userApp:main' %}">솥</a></li>
+                    <li><a href="#">스토어</a></li>
+                    <li><a href="#">커뮤니티</a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+                <ul class="searcharea">
+                    <li><input type="search" placeholder="Serach.."></li>
+                    <li><a href="{% url 'userApp:cart' %}"><img src="../../../static/img/cart.svg"></a></li>
+                    <li><a href="{% url 'userApp:home' %}"><img src="../../../static/img/mypage.svg"></a></li>
+                </ul>
+            </div>
         </div>
-        </a>
     </div>
-   {% endfor %}
+    <!--2-->
+    <div class="main_text0">
+        <ul>
+            <li><div class="q">SHOPPING</div></li>
+            <li><div class="w">금주의 주문량 TOP3</div></li>
+            <li><div class="e">이번 주 회원님들이 가장 많이 찾은 식품을 만나보세요!</div></li>
+        </ul>
+        <div class="maincontainer">
+            <div>
+                <a href="">
+                    <img src="../../..{{pro.Thumbnail.url}}" alt=""><br>
+                    <div class="name">
+                        <div id="minititle">무농약방울토마토</div>
+                        <div id="miniamount">2kg/팩</div>
+                    </div>
+                    <img src="" alt="별 이미지">
+                    <div class="price">
+                        <div>10, 900원</div>
+                        <div>퍼센트 이미지</div>
+                    </div>
+                </a>
+            </div>
+            {% for pro in products%}
+            <div>
+                <a href="{% url 'userApp:detail' pro.pk %}">
+                    <img src="../../..{{pro.Thumbnail.url}}" alt=""><br>
+                    <div>
+                        {{pro.name}}<br>
+                        {{pro.price}} / {{pro.amount}}
+                    </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+   </div>
+    <div class="main_text1">
+    </div>
 
-{% endblock %}
+    <!--4-->
+    <div  class="main_text2">
+        <ul>
+            <li><div class="z">STORE</div></li>
+            <li><div class="x">신뢰도 최고 인기농장 TOP2</div></li>
+            <li><div class="c">믿고 사 먹을 수 있는 재구매율 최상위 농장을 만나보세요!</div></li>
+        </ul>
+        
+        <ul class="icons">
+            <li><a href="#"><img src="../../../static/img/farm1.png"></a></li>
+            <li><a href="#"><img src="../../../static/img/farm2.png"></a></li>
+        </ul>
+    
+    </div>
+    <!--5-->
+    <div class="gray">
+        <div class="ld">
+            <a href="#"><img src="../../../static/img/jj.png"></a>
+        </div>
+    </div>
+    <!--하단 정보바-->
+   <div class="zz"><img src="../static/img/zz.png"></div>
+</body>

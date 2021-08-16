@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>솥 by SSAK3</title>
+    <link rel="stylesheet" href="{% static 'base2.css' %}" type="text/css">
+    <script src="https://kit.fontawesome.com/b0f29e9bfe.js" corssorigin="anonymous"></script>
+    {% block style %}
+    {% endblock %}
+</head>
+<body>
+    <div class="wrap">
+        <div class="intro">
+            <div class="header">
+                <ul class="nav">
+                    <li><a href="{% url 'userApp:main' %}">솥</a></li>
+                    <li><a href="#">스토어</a></li>
+                    <li><a href="#">커뮤니티</a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+                <ul class="searcharea">
+                    <li><input type="search" placeholder="Serach.."></li>
+                    <li><a href="{% url 'userApp:cart' %}"><img src="../static/img/cart.svg"></a></li>
+                    <li><a href="{% url 'userApp:home' %}"><img src="../static/img/mypage.svg"></a></li>
+                </ul>
+            </div>
+            <div class ="title">
+                {% block content2 %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <!--2-->
+    <div class="main_text0">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% block content3 %}
+    {% endblock %}
+   <!--하단 정보바-->
+   <div class="zz"><img src="../static/img/zz.png"></div>
+</body>

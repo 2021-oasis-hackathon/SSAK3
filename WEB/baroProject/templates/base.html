@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOT by SSAK3</title>
+    <title>솥 by SSAK3</title>
     <link rel="stylesheet" href="{% static 'base.css' %}" type="text/css">
     <script src="https://kit.fontawesome.com/b0f29e9bfe.js" corssorigin="anonymous"></script>
     {% block style %}
@@ -34,15 +34,9 @@
                 </ul>
             </div>
             <div class="intro_text">
-                {% block content2 %}
-                <!--여기에 메인(?)글씨 h1, h4-->
+                {% block content %}
                 {% endblock %}
-                
-            </div>
-            {% block content %}
-                <!--여기에 네모박스(?) 내용-->
-            {% endblock %}
-                
+            </div> 
         </div>
     </div>
     <a href="" clasas="navbar_tooglBtn"></a>
