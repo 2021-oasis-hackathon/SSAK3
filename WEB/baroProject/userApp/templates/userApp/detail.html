@@ -2,90 +2,89 @@
 {% load static %}
 
 {% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'userApp/detail.css' %}">
 {% endblock %}
 
 {% block content %}
-
     <div class="background">
-
-        <div class="rice">
-            <img src="rice22.png">
-        </div>
-        <div class="backcolors">
-            <img src="back white.svg">
-
-            
-            <div class="category">
-                <a href="#"><img src="category.svg"></a>
+        <div class="maininfocontainer">
+            <!-- 썸네일 -->
+            <div class="rice">
+                <img src="{% static 'img/rice22.png' %}">
             </div>
-        <div class="title">
-            <h1>유기농 우리쌀 도정예약</h1>
-        </div>
-        <div class="star">
-            <img src="star4.svg">
-        </div>
-        
-        <div class="price">
-            <h1>32,000원</h1>
-        </div>
-        <div class="reserve">
-                <img src="75.svg">
-        </div>
-        <div class="heart">
-                <img src="heart.svg">
-        </div>
-        <div class="cart">
-            <a href="#"><img src="cartt.svg"></a>
-            <h1>장바구니</h1>
-        </div>
-        
-        
-    </div>
-        <div class="first">
-            <img src="first.png">
-        </div>
-        <div class="second">
-            <img src="second.png">
-        </div>
-        <div class="page">
-            <img src="page.png">
-        </div>
-    </div>
-
-
-
-<!-- ----------------------------------------------------------- -->
-    <div class="box">
-        <div class="left">
-
-        </div>
-        <div class="right">
-            {{ object.name }}<br>
-            {{ object.price }} / {{object.amount}}<br>
-            <div class="r_bottom">
-                <div class="intro">
-                    <ul>
-                        <li>주문가능 종량 용량 | {{object.expect}} </li>
-                        <li>예상수확 시기 | {{object.expectD1}} ~ {{object.expectD2}}</li>
-                        <li>배송가능기간 | {{object.deliveryD1}} ~ {{object.deliveryD2}}</li>
-                        <li>포장방식 | {{object.deliveryOption}}</li>
-                        <li>소개글 | {{object.intro}}</li>
-                        <li>후기/평점 | 후기 n개 평점 4.5/5</li>
-                    </ul>
+            <!-- 인포 -->
+            <div class="mainmaininfo">
+                <div class="opt">
+                    <div class="category">
+                        {{object.category}}
+                    </div>
+                    <img src="{% static 'img/heart.svg' %}">
                 </div>
-                <div class="buyoption">
+                <div class="mainnames">
+                    <div class="title_z">
+                        <h1>{{ object.name }}</h1>
+                   </div>
+                   <b> {{object.amount}}</b>
+                </div>
+                <img src="{% static 'img/ththth.png' %}" style="padding-top: 10px;">
+                <div class="mbinfo">
+                    <div class="mbinfo2">
+                        <img src="{% static 'img/star 8.svg' %}" style="width: 100px;">
+                        <div class="price">
+                            <h1>{{ object.price }}원</h1>
+                       </div>
+                       <b>{{object.deliveryOption}}</b>
+                       <div class="mbinfo3">
+                            <div class="reee">
+                                {{object.deliveryD1}} ~ {{object.deliveryD2}}
+                            </div>
+                            <img src="{% static 'img/reserve short.png' %}">
+                       </div>
+
+                    </div>
+                    <div class="reserve">
+                        <img src="{% static 'img/75.svg' %}">
+                   </div>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!--  -->
+        <div class="first">
+            <ul class="three">
+                <li><img src="{% static 'img/firstsecond.png' %}">
+                    <h1>우리미 쌀 농장</h1>
+                </li>
+                <li> 
                     <form action="{% url 'userApp:addCart' object.pk %}" method="POST">
                         {% csrf_token %}
-                        <ul>
-                            <li>주문량 : <input type="number" name="od_amount" min = 1 required></li>
-                            <li>원하는 배송일 : <input type="date" name="od_date" min={{object.deliveryD1}}, max={{object.deliveryD2}} required></li>
-                            <li>포장방식 : <input type="radio" name="od_deliopt" value={{object.deliveryOption}} checked></li>
-                            <li>요청사항 입력 : <textarea name="od_requests" cols="30" rows="10"></textarea></li>
-                        </ul>
-                        <button type = submit>장바구니 담기</button>
+                        <img src="{% static 'img/three square.svg' %}">
+                        <h2>{{ object.price }}원</h2>
+                        <!-- <h3>{{object.amount}} - </h3>
+                        <span id="input_a"><input type="date" name="od_date" min={{object.deliveryD1}}, max={{object.deliveryD2}} required>개</span><br>
+                        <h5>*희망 발송일 설정은 예상 배송 기간 이후로 설정 가능합니다.</h5>
+                        <span id="input_b"><input type="number" name="od_amount" min = 1 required></span><br>
+                        <h7><img src="{% static 'img/reserve long.png' %}" alt="예약"></h7>
+                        <h8><button type = submit><img src="{% static 'img/cart button.png' %}" alt="장바구니"></button></h8>
+                        <input type="hidden" name="od_deliopt" value={{object.deliveryOption}} > -->
+                        <span class="hot">{{object.amount}}</span> 
+                        <span id="input_a"><input type="date" name="od_date" min={{object.deliveryD1}}, max={{object.deliveryD2}} required>개</span><br>
+                        <span>*희망 발송일 설정은 예상 배송 기간 이후로 설정 가능합니다.</span><br><br>
+                        <span id="input_b">희망배송일 : <input type="number" name="od_amount" min = 1 required></span><br>
+                        <h7><img src="{% static 'img/reserve long.png' %}" alt="예약"></h7>
+                        <h8><button type = submit><img src="{% static 'img/cart button.png' %}" alt="장바구니"></button></h8>
+                        <input type="hidden" name="od_deliopt" value={{object.deliveryOption}} >
                     </form>
-                </div>
-            </div>
+                </li>
+            </ul>
+        </div>
+        <div class="second">
+            <img src="{% static 'img/second.png' %}">
+        </div>
+        <div class="page">
+            <img src="{% static 'img/page.png' %}">
         </div>
     </div>
+
 {% endblock %}

@@ -32,7 +32,7 @@ def addCart(request, object_pk):
             od_amount = request.POST['od_amount'],
             od_date = request.POST['od_date'],
             od_deliopt = request.POST['od_deliopt'],
-            od_requests = request.POST['od_requests'],
+            # od_requests = request.POST['od_requests'],
         )
         print("아이템 생성 완료")
         return redirect('userApp:cart')
