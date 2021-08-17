@@ -100,11 +100,17 @@ border:none;
     margin-left:80px;
     margin-top:-420px;
 }
+.cate{
+    margin-left:92px;
+    margin-top:-27px;
+    color:white;
+}
 .title{
     margin-left:80px;
     color:#585858;
     font-size:17px;
     font:border;
+    margin-top:20px;
 
 }
 
