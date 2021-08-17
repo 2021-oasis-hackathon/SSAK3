@@ -1,0 +1,176 @@
+*{
+    list-style:none;
+    text-decoration:none;
+    border-collapse:collapse;
+    margin:0px;
+    padding:0px;
+}
+/*nav*/
+.intro{
+    background-image:url("i.png");
+    background-size:cover;
+    width:1920px;
+    height:640px;
+   
+    
+}
+.header{
+    background-color:white;
+    width:1920px;
+    margin:auto;
+    display:flex;
+    height:60px;
+
+}
+.nav{
+    display:flex;
+
+}
+.searcharea{
+    display:flex;
+}
+.nav>li{
+    margin-left:40px;
+}
+.searcharea>li{
+    margin-left:40px;
+
+}
+.searcharea{
+    width: 700px;
+    background-color:white;
+    justify-content:flex-end;
+    line-height:50px;
+    margin-left:300px;
+    
+}
+.nav{
+    background-color:white;
+    width:500px;
+    justify-content:flex-end;
+    margin-left:200px;
+    line-height:50px;
+    
+}
+.nav>li>a{
+    color:gray;
+    font-size:20px;
+    font-weight:bolder;
+}
+.searcharea li input{
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px #00000029;
+border-radius: 12px;
+opacity: 1;
+width: 315px;
+height: 43px;
+border:none;
+
+}
+
+/* main*/
+.backcolor{
+    background-color:#F5F5F5;
+    width: 1950px;
+    height: 1235px;
+    margin-top:-550px;
+    
+}
+.icon{
+    display:flex;
+    margin-left:340px;
+    padding-top:75px;
+}
+.icon h1{
+    font-size:35px;
+    color:#585858;
+}
+.farmname{
+    margin-left:340px;
+    padding-top:45px;
+}
+.backcolors{
+    margin-left:340px;
+}
+.rice{
+    margin-left:190px;
+    margin-top:-320px;
+
+}
+.category{
+    margin-left:479px;
+    margin-top:-262px;
+}
+.title{
+    margin-left:479px;
+    color:#585858;
+    font-size:15px;
+}
+.price{
+    color:#629dd9 ;
+    font-size:15px;
+    margin-left:479px;
+    margin-top:29px;
+}
+.reserve{
+    margin-left:1011px;
+    
+}
+.bar{
+    margin-left:75px;
+    margin-top:-150px;
+}
+.as{
+    margin-left:479px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-sandoll-gothicneo1);
+letter-spacing: var(--unnamed-character-spacing--0-32);
+color: var(--unnamed-color-707070);
+text-align: left;
+font: normal normal normal 16px/19px Sandoll GothicNeo1;
+letter-spacing: -0.32px;
+color: #707070;
+opacity: 1;
+font-size:7px;
+margin-top:15px;
+}
+.count{
+    margin-left:479px;
+    margin-top:20px;
+}
+.carttt{
+    margin-left:540px;
+    margin-top:100px;
+}
+.v{
+    color:#585858;
+    margin-left:500px;
+    margin-top:-190px;
+    font-size:10px;
+    
+}
+.b{
+    color:#585858;
+    margin-left:500px;
+    font-size:10px;
+}
+.n{
+    color:#629dd9 ;
+    margin-left:500px;
+}
+.b h1{
+    margin-top:10px;
+}
+.n h1{
+    margin-top:40px;
+}
+.under1{
+    margin-top:100px;
+}
+.under2{
+    margin-left:1050px;
+    margin-top:-100px;
+}
+.finish{
+    margin-top:150px;
+}
