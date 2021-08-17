@@ -1,8 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
 
+{% block style %}
 <link rel="stylesheet" type="text/css" href="userhome.css">
+{% endblock %}
 
+{% block content2 %}
+<h1>소비자 메인화면</h1>
+<br><br>
+<h4>HeIIo</h4>
+{% endblock %}
 
-
+{% block content %}
     <div class="wrap">
         <div class="intro">
             <div class="header">
@@ -30,7 +39,83 @@
             <li><div class="w">금주의 주문량 TOP3</div></li>
             <li><div class="e">이번 주 회원님들이 가장 많이 찾은 식품을 만나보세요!</div></li>
         </ul>
+   <!--tomato-->
+   <ul  class="icon4">
+       <li>
+        <div class="tomato5">
+            <a href="">
+                <div class="image1">
+                <img src="tomato1.png" alt=""><br></div>
+                <div class="name">
+                    <div class="title">
+                    <div id1="minititle">무농약 방울토마토</div></div>
+                    <div class="miniamount">
+                    <div id2="miniamount">2kg/팩</div></div>
+                </div>
+                <div class="star">
+                <img src="star.svg" alt=""></div>
+               <div class="price">
+                   <div class="price1">
+                    <div>10, 900원</div></div>
+                    <div class="reserve1">
+                    <div><img src="reserve.svg"></div></div>
+               
+            
+                </div>
+            </a>
        
+    </div>
+    <li>
+        <div class="tomato5">
+            <a href="">
+                <div class="image1">
+                <img src="rice5.png" alt=""><br></div>
+                <div class="name">
+                    <div class="title">
+                    <div id1="minititle">유기농 우리쌀 도정예약</div></div>
+                    <div class="miniamount">
+                    <div id2="miniamount">10kg</div></div>
+                </div>
+                <div class="star">
+                <img src="star 8.svg" alt=""></div>
+               <div class="price">
+                   <div class="price1">
+                    <div>32, 000원</div></div>
+                    <div class="reserve1">
+                    <div><img src="75.svg"></div></div>
+               
+            
+                </div>
+            </a>
+       
+    </div>
+    <li>
+        <div class="tomato5">
+            <a href="">
+                <div class="image1">
+                <img src="cheese5.png" alt=""><br></div>
+                <div class="name">
+                    <div class="title">
+                    <div id1="minititle">임실 구워먹는 우리치즈</div></div>
+                    <div class="miniamount">
+                    <div id2="miniamount">280g/팩</div></div>
+                </div>
+                <div class="star">
+                <img src="star9.svg" alt=""></div>
+               <div class="price">
+                   <div class="price1">
+                    <div>10, 600원</div></div>
+                    <div class="reserve1">
+                    <div><img src="62.svg"></div></div>
+               
+            
+                </div>
+            </a>
+       
+    </div>
+      
+   </ul>
+   
         
     
 
@@ -38,10 +123,10 @@
    <div>
        <a href="{% url 'userApp:detail' pro.pk %}">
         <img src="../../..{{pro.Thumbnail.url}}" alt=""><br>
-        <div class="bu">
+        
             {{pro.name}}<br>
             {{pro.price}} / {pro.amount}
-        </div>
+        
         </a>
     </div>
 
@@ -96,4 +181,6 @@
    <div class="zz">
     <img src="zz.png">
    </div>
+
+{% endblock %}
 

@@ -106,12 +106,70 @@ opacity: 1;
     font-size:15px;
     color:gray;
 }
-.bu{
-    background-image:url("tomato.png");
-    background-size:cover;
-    width: 400px;
-height: 486px;
+
+/*tomato*/
+
+.icon4{
+    width:1250px;
+    margin:auto;
+    height:486px;
+    display:flex;
+    
 }
+.icon4>li{
+    flex:1;
+    background-image:url("square white.svg");
+    height:486px;
+    margin-top:50px;
+
+}
+.icon4>li:not(:last-child){
+    margin-right:20px;
+}
+
+.name{
+    display:flex;
+    
+}
+.image1{
+    margin-top:25px;
+    margin-left:17px;
+}
+.title{
+    font-size:24px;
+    margin-left:40px;
+    margin-top:10px;
+    color:#585858;
+    font-weight:bolder;
+}
+.miniamount{
+    margin-left:20px;
+    margin-top:14px;
+    color:gray;
+    font-size:14px;
+}
+.star{
+    margin-top:5px;
+    margin-right:200px;
+    
+}
+.reserve1{
+   flex:1;
+   
+}
+.price1{
+    color:#629dd9;
+    font:bolder;
+    font-size:35px;
+    margin-top:20px;
+    margin-left:47px;
+    
+   
+}
+.price{
+    display:flex;
+}
+
 
 /*3*/
 .main_text1{
