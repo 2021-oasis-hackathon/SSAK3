@@ -1,0 +1,23 @@
+{% extends 'base2.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'userApp/accFinish.css' %}" type="text/css">
+{% endblock %}
+
+
+{% block content %}
+<div class="background">
+    <div class="finish2">
+        <img src="{% static 'img/finish2.png' %}">
+    </div>
+    <div class="finish1">
+        <img src="{% static 'img/finish1.png' %}">
+    </div>
+    <div class="finish3">
+        <a href="{% url 'userApp:main' %}"><img src="{% static 'img/return.svg' %}"></a>
+    </div>
+    
+
+</div>
+{% endblock %}

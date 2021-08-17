@@ -11,4 +11,5 @@ urlpatterns = [
     path('addCart/<int:object_pk>', views.addCart, name='addCart'),
     path('cart/', views.cart, name='cart'),
     path('pay/<int:pay>', views.pay, name='pay'),
+    path('accFinish', views.accFinish, name="accFinish"),
 ]

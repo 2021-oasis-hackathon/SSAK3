@@ -69,3 +69,6 @@ def pay(request, pay):
 def store(request):
     context={}
     return render(request, 'userApp/store.html', context)
+
+def accFinish(request):
+    return render(request, 'userApp/accFinish.html')

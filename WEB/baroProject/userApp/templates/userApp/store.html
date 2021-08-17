@@ -2,18 +2,26 @@
 {% load static %}
 
 {% block style %}
-<link rel="stylesheet" href="text/css" href="../../static/userApp/store.css">
+<link rel="stylesheet" type="text/css" href="{% static 'userApp/store.css' %}">
 {% endblock %}
 
 {% block content %}
 
 <!--임시-->
 <div class="second">
-    <img src="{% static 'img/t.png' %}">
+    <div><img src="{% static 'img/t.png' %}"></div>
+    <div class="sss5">
+        <form action="" method="POST">
+            <input type="text" name="searchText" class="searchArea" placeholder="Search ... ">
+            <button type="submit" id="search">검색</button>
+        </form>
+    </div>
+    
 </div>
 <div class="third">
     <img src="{% static 'img/fff.png' %}">
 </div>
+
 
 
 

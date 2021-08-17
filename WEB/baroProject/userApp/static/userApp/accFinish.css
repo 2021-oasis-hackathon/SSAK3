@@ -1,0 +1,26 @@
+.background{
+    background-color:#F5F5F5;
+    height:661px;
+    width:1920px;
+    margin-top:-550px;
+}
+.finish2{
+    margin-left:338px;
+    padding-top:74px;
+}
+.finish1{
+    margin-left:340px;
+    margin-top:20px;
+}
+.finish3{
+    margin-left:860px;
+    margin-top:-120px;
+}
+.intro{
+    background-image:url("../static/img/cc.png");
+    background-size:cover;
+    width:1920px;
+    height:640px;
+   
+    
+}
