@@ -19,7 +19,7 @@
     margin:auto;
     display:flex;
     height:60px;
-
+    padding-top:18px;
 }
 .nav{
     display:flex;
@@ -126,28 +126,86 @@ border:none;
     margin-top:-370px;
     margin-left:700px;
 }
-.cart{
-    margin-left:80px;
-    margin-top:270px;
-}
-.cart h1{
-    color:#629dd9 ;
-    font-size:20px;
-    margin-left:20px;
-    margin-top:-50px;
+.reee{
+    margin-left:60px;
+    margin-top:250px;
 
+}
+.reeh{
+    margin-left:300px;
+    margin-top:-60px;
+}
+.reet{
+    margin-left:85px;
+    margin-top:-280px;
 }
 .first{
-    margin-left:340px;
-    margin-top:90px;
-}
-.second{
-    margin-left:340px;
-    margin-top:30px;
-}
-.page{
-    margin-left:240px;
-    margin-top:30px;
+    margin-top:260px;
 }
 
+.three{
+    display:flex;
+    width:1240px;
+    height:384px;
+    
+    
+}
+.three>li{
+    flex:1;
+    
+    height:384px;
+    margin-top:70px;
+    margin-right:10px;
+
+}
+.three>li:not(:last-child){
+    margin-left:330px;
+}
+
+
+.second{
+    margin-left:330px;
+    margin-top:120px;
+}
+.page{
+    margin-left:230px;
+    margin-top:40px;
+}
+.three h1{
+    margin-top:-375px;
+    margin-left:150px;
+    color:#585858;
+}
+.three h2{
+    color:#629dd9 ;
+    font-size:50px;
+    margin-top:-340px;
+    margin-left:50px;
+}
+.three h3{
+    color:#00000029;
+    margin-left:50px;
+    margin-top:15px;
+}
+.three h4{
+    margin-left:50px;
+    margin-top:60px;
+}
+.three h5{
+    margin-left:50px;
+    color:#00000029;
+    font:bolder;
+}
+.three h6{
+    margin-left:400px;
+    margin-top:-230px;
+}
+.three h7{
+    margin-left:410px;
+    margin-top:-200px;
+}
+.three h8{
+    margin-left:415px;
+    
+}
 
