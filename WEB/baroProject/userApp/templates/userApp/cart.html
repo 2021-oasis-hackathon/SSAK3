@@ -1,40 +1,87 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 {% load static %}
 
 {% block style %}
+<link rel="stylesheet" href="{% static 'userApp/cart.css' %}" type="text/css">
 {% endblock %}
 
-{% block content2 %}
-<h1>소비자 장바구니</h1>
-<br><br>
-<h4>HeIIo</h4>
-{% endblock %}
 
 {% block content %}
-<div class="box" style="background-color: aliceblue;">
-    <div>전체산택 선택삭제 네비게이션 바 있는 곳</div>
-    <div> 
-        <!-- 아이템 리스트 있는 곳 -->
+<div class="backcolor">
+    <div class="icon">
+        <img src="{% static 'img/cart icon1.svg' %}">
+        <h1>장바구니</h1>
+    </div>
+    <div class="zz_container">
+        <div class="farmname">
+            <a href="#"><img src=""></a>
+        </div>
         {% if error %}
-        <div>장바구니에 담긴 상품이 없습니다.</div>
+            <div>장바구니에 담긴 상품이 없습니다.</div>
         {% else %}
             {% for item in cart_items %}
-                <div>
-                    <img src="" alt="상품이미지">
-                    상품명 : {{item.product.name}}
-                    주문량 : {{item.od_amount}}
-                    가격 : {{item.sub_total}}
+            <div class="backcolors">
+                <!-- 체크박스 -->
+                <div class="bar">
+                    <img src="{% static 'img/ss.svg' %}">
                 </div>
+                <!-- 썸네일 -->
+                <div class="rice">
+                    {% if item.product.Thumbnail == null %}
+                    <a href="#"><img src="{% static 'img/ThumbnailSOT.png' %}"></a>
+                    {% else %}
+                    <a href="#"><img src="../../..{{item.product.Thumbnail.url}}"></a>
+                    {% endif %}
+
+                </div>
+                <div class="infocontainer">
+                    <div class="category">
+                        {{item.product.category}}
+                    </div>
+                    <div class="newname">
+                        <div class="title_new">
+                            <h1>{{item.product.name}}</h1>
+                        </div>
+                        <div id = "newamount">{{item.product.amount}}</div>
+                    </div>
+                    <div class="price">
+                        <h1>{{item.sub_total}}원</h1>
+                    </div>
+                    <div class="as">
+                        <h1>선택옵션: {{item.od_date}} 이후 발송, {{item.od_deliopt}}배송</h1>
+                    </div>
+                    <div class="count">
+                        {{item.od_amount}}개
+                    </div>
+                </div>
+                <!-- 퍼센트 이미지 -->
+                <div class="reserve">
+                    <img src="{% static 'img/75.svg' %}">
+                </div>
+            </div>
             {% endfor %}
         {% endif %}
+        <div class="accountContainer">
+             <!--account-->
+            <div class="carttt">
+                <img src="{% static 'img/pay.png' %}">
+                <div class="v">
+                    <h1>{{total}}원</h1>
+                </div>
+                <div class="b">
+                    <h1>{{shippingFee}}원</h1>
+                </div>
+                <div class="n">
+                    <h1>{{pay}}원</h1>
+                </div>
+                </div>
+                <div class="btn_containerPay">
+                    <a href="#"><img src="{% static 'img/white.svg' %}"></a>
+                    <a href="{% url 'userApp:pay' pay %}"><img src="{% static 'img/blue.svg' %}"></a>
+                </div>
+                
+            </div>
     </div>
-    <div>
-        <!-- 총 정보 나오는 곳 -->
-        상품금액 : {{total}}<br>
-        배송비 : {{shippingFee}}<br>
-        결제금액 : {{pay}}<br>
-        <a href="{% url 'userApp:pay' pay %}">결제</a>
-
-    </div>
-</div>
+   
+        
 {% endblock %}

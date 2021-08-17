@@ -47,7 +47,7 @@ def cart(request):
     shippingFee = 0
 
     cart_items = CartItem.objects.filter(user__id = request.user.pk)
-    if cart_items == None:
+    if cart_items.count() == 0:
         context['error'] = '담긴 상품이 없습니다.'
     else:
         for item in cart_items:

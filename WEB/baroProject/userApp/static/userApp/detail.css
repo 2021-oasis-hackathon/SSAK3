@@ -1,0 +1,85 @@
+
+/*main*/
+.background{
+    background-color:#F5F5F5;
+    width: 1950px;
+    height: 2632px;
+    margin-top:-550px;
+}
+.rice{
+    margin-left:340px;
+    padding-top:62px;
+}
+.icon{
+    display:flex;
+    margin-left:340px;
+    padding-top:75px;
+}
+.icon h1{
+    font-size:35px;
+    color:#585858;
+}
+.farmname{
+    margin-left:340px;
+    padding-top:45px;
+}
+.backcolors{
+    margin-left:760px;
+    margin-top:-475px;
+}
+
+.category{
+    margin-left:80px;
+    margin-top:-420px;
+}
+.title{
+    margin-left:80px;
+    color:#585858;
+    font-size:17px;
+    font:border;
+
+}
+
+.star{
+    margin-left:80px;
+    margin-top:100px;
+}
+.price{
+    color:#629dd9 ;
+    font-size:20px;
+    margin-left:80px;
+    margin-top:15px;
+}
+.reserve{
+    margin-left:700px;
+    
+}
+.heart{
+    margin-top:-370px;
+    margin-left:700px;
+}
+.cart{
+    margin-left:80px;
+    margin-top:270px;
+}
+.cart h1{
+    color:#629dd9 ;
+    font-size:20px;
+    margin-left:20px;
+    margin-top:-50px;
+
+}
+.first{
+    margin-left:340px;
+    margin-top:90px;
+}
+.second{
+    margin-left:340px;
+    margin-top:30px;
+}
+.page{
+    margin-left:240px;
+    margin-top:30px;
+}
+
+

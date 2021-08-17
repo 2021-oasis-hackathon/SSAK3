@@ -19,7 +19,7 @@
     margin:auto;
     display:flex;
     height:60px;
-
+    padding-top:18px;
 }
 .nav{
     display:flex;
@@ -58,13 +58,14 @@
 }
 .searcharea li input{
     background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    border-radius: 12px;
-    opacity: 1;
-    width: 315px;
-    height: 43px;
-    border:none;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px #00000029;
+border-radius: 12px;
+opacity: 1;
+width: 315px;
+height: 43px;
+border:none;
+
 }
 .a{
     padding-top: 50px;

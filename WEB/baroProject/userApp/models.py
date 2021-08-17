@@ -18,9 +18,8 @@ class CartItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     od_amount = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(100)])
     od_date = models.DateField()
-    DELIERY=[("icepack","아이스팩"), ("premium", "신선배송가방")]
-    od_deliopt = models.CharField(
-        choices=DELIERY, max_length=30)
+    # DELIERY=[("icepack","아이스팩"), ("premium", "신선배송가방")]
+    od_deliopt = models.CharField(max_length=30)
     od_requests=models.TextField(null=True)
 
     #https://dev-mht.tistory.com/147

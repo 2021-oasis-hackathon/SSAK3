@@ -6,7 +6,7 @@
     padding:0px;
 }
 .intro{
-    background-image:url("../../../static/img/b.png");
+    background-image:url("../../../static/img/i.png");
     background-size:cover;
     width:1920px;
     height:640px;
@@ -19,7 +19,7 @@
     margin:auto;
     display:flex;
     height:60px;
-
+    padding-top:18px;
 }
 .nav{
     display:flex;
