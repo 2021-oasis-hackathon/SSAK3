@@ -35,33 +35,84 @@
             <li><div class="e">이번 주 회원님들이 가장 많이 찾은 식품을 만나보세요!</div></li>
         </ul>
         <div class="maincontainer">
-            <div>
-                <a href="">
-                    <img src="../../..{{pro.Thumbnail.url}}" alt=""><br>
-                    <div class="name">
-                        <div id="minititle">무농약방울토마토</div>
-                        <div id="miniamount">2kg/팩</div>
+            <ul  class="icon4">
+                <!-- <li>
+                    <div class="tomato5">
+                        <a href="">
+                            <div class="image1">
+                                <img src="../../../static/img/tomato1.png" alt=""><br></div>
+                            <div class="name">
+                                <div class="title">
+                                    <div id1="minititle">무농약 방울토마토</div></div>
+                                <div class="miniamount">
+                                    <div id2="miniamount">2kg/팩</div></div>
+                            </div>
+                            <div class="star">
+                                <img src="../../../static/img/star.svg" alt=""></div>
+                            <div class="price">
+                                <div class="price1">
+                                    <div>10, 900원</div></div>
+                                <div class="reserve1">
+                                    <div><img src="../../../static/img/reserve.svg"></div></div>
+                            </div>
+                         </a>
+                
                     </div>
-                    <img src="" alt="별 이미지">
-                    <div class="price">
-                        <div>10, 900원</div>
-                        <div>퍼센트 이미지</div>
+                </li> -->
+                {% for pro in products%}
+                <li>
+                    <div class="tomato5">
+                        <a href="{% url 'userApp:detail' pro.pk %}">
+                            <div class="image1">
+                                {% if pro.Thumbnail == null %}
+                                <img src="../../../static/img/ThumbnailSOT.png" style="width: 342px;height: 249px;" alt=""><br></div>
+                                {% else %}
+                                <img src="../../..{{pro.Thumbnail.url}}" style="width: 342px;height: 249px;" alt=""><br></div>
+                                {% endif %}
+                            <div class="name">
+                                <div class="title">
+                                    <div id1="minititle">{{pro.name}}</div></div>
+                                <div class="miniamount">
+                                    <div id2="miniamount">{{pro.amount}}</div></div>
+                            </div>
+                            <div class="star">
+                                <img src="../../../static/img/star 8.svg" alt=""></div>
+                            <div class="price">
+                                <div class="price1">
+                                    <div>{{pro.price}}원</div></div>
+                                <div class="reserve1">
+                                    <div><img src="../../../static/img/75.svg"></div></div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            {% for pro in products%}
-            <div>
-                <a href="{% url 'userApp:detail' pro.pk %}">
-                    <img src="../../..{{pro.Thumbnail.url}}" alt=""><br>
-                    <div>
-                        {{pro.name}}<br>
-                        {{pro.price}} / {{pro.amount}}
+                </li>
+                {% endfor %}
+                <!-- <li>
+                    <div class="tomato5">
+                        <a href="">
+                            <div class="image1">
+                                <img src="../../../static/img/cheese5.png" alt=""><br></div>
+                            <div class="name">
+                                <div class="title">
+                                    <div id1="minititle">임실 구워먹는 우리치즈</div></div>
+                                <div class="miniamount">
+                                    <div id2="miniamount">280g/팩</div></div>
+                            </div>
+                            <div class="star">
+                                <img src="../../../static/img/star9.svg" alt=""></div>
+                            <div class="price">
+                                <div class="price1">
+                                    <div>10, 600원</div></div>
+                                <div class="reserve1">
+                                    <div><img src="../../../static/img/62.svg"></div></div>
+                            </div>
+                        </a>
                     </div>
-                    </a>
-                </div>
-            {% endfor %}
+                </li> -->
+            </ul>  
         </div>
-   </div>
+    </div>
+
     <div class="main_text1">
     </div>
 

@@ -10,7 +10,7 @@ def home(request):
 
 def main(request):
     context={}
-    products = Product.objects.all()
+    products = Product.objects.all()[:3]
     context['products'] = products
     return render(request, 'userApp/main.html',context)
 

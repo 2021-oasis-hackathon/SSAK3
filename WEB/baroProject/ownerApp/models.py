@@ -12,13 +12,11 @@ class Store(models.Model):
     store_url = models.CharField(max_length=30)
     store_intro = models.TextField()
     store_tel = models.CharField(max_length=30)
-    CATEGORYLIST=[('veg', "채소/야채"), ('fruits', "과일"), ('grains', "곡류")]
-    category = models.CharField(
-        choices=CATEGORYLIST, max_length=30, null=True, blank=True)
+    # CATEGORYLIST=[('veg', "채소/야채"), ('fruits', "과일"), ('grains', "곡류")]
+    category = models.CharField( max_length=30, null=True, blank=True)
     store_address=models.CharField(max_length=100)
-    BANKLIST=[('NH', "농협"), ('KB', "국민"), ('SH', "신한"), ('etc', "기타")]
-    bank = models.CharField(
-        choices=BANKLIST, max_length=30, null=True, blank=True)
+    # BANKLIST=[('NH', "농협"), ('KB', "국민"), ('SH', "신한"), ('etc', "기타")]
+    bank = models.CharField(max_length=30, null=True, blank=True)
     account_name = models.CharField(max_length=30, null=True, blank=True)
     store_account=models.CharField(max_length=50)
     
@@ -35,19 +33,47 @@ class Product(models.Model):
     Thumbnail = models.ImageField(upload_to='thumimg', null=True)
     introImage = models.ImageField(upload_to='productimg', null=True)
     salesRate = models.IntegerField(default=0, null=True)
-    OPTLIST=[('opt1', 'opt1'),('opt2', 'opt2'),('opt3', 'opt3'),('opt4', 'opt4')]
-    category = models.CharField(
-        choices=OPTLIST, max_length=30, null=True)
+    # OPTLIST=[('opt1', 'opt1'),('opt2', 'opt2'),('opt3', 'opt3'),('opt4', 'opt4')]
+    category = models.CharField(max_length=30, null=True)
     expect = models.CharField(max_length=50, null=True)
     amount = models.CharField(max_length=30, null=True)
     expectD1 = models.DateField(null=True)
     expectD2 = models.DateField(null=True)
     deliveryD1 = models.DateField(null=True)
     deliveryD2 = models.DateField(null=True)
-    DELIERY=[("icepack","아이스팩"), ("premium", "신선배송가방")]
-    deliveryOption =  models.CharField(
-        choices=DELIERY, max_length=30, null=True)
+    # DELIERY=[("icepack","아이스팩"), ("premium", "신선배송가방")]
+    deliveryOption =  models.CharField(max_length=30, null=True)
     region = models.CharField(max_length=50, null=True)
+
+    #구매자수
+    age1_M_B = models.IntegerField(null=True, default=0)
+    age1_M_W = models.IntegerField(null=True, default=0)
+    age1_M_G = models.IntegerField(null=True, default=0)
+    age1_W_B = models.IntegerField(null=True, default=0)
+    age1_W_W = models.IntegerField(null=True, default=0)
+    age1_W_G = models.IntegerField(null=True, default=0)
+
+    age2_M_B = models.IntegerField(null=True, default=0)
+    age2_M_W = models.IntegerField(null=True, default=0)
+    age2_M_G = models.IntegerField(null=True, default=0)
+    age2_W_B = models.IntegerField(null=True, default=0)
+    age2_W_W = models.IntegerField(null=True, default=0)
+    age2_W_G = models.IntegerField(null=True, default=0)
+
+    age3_M_B = models.IntegerField(null=True, default=0)
+    age3_M_W = models.IntegerField(null=True, default=0)
+    age3_M_G = models.IntegerField(null=True, default=0)
+    age3_W_B = models.IntegerField(null=True, default=0)
+    age3_W_W = models.IntegerField(null=True, default=0)
+    age3_W_G = models.IntegerField(null=True, default=0)
+
+    age4_M_B = models.IntegerField(null=True, default=0)
+    age4_M_W = models.IntegerField(null=True, default=0)
+    age4_M_G = models.IntegerField(null=True, default=0)
+    age4_W_B = models.IntegerField(null=True, default=0)
+    age4_W_W = models.IntegerField(null=True, default=0)
+    age4_W_G = models.IntegerField(null=True, default=0)
+
 
     def delete(self, *args, **kwargs):
         super(Product, self).delete(*args, **kwargs)

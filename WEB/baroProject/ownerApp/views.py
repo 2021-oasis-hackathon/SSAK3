@@ -32,8 +32,9 @@ def register2(request):
             account_name = request.POST['account_name'],
             store_account = request.POST['store_account'] ,
         )
+        print("상점이 생성되었음.")
 
-        store_pk = Store.pk
+        store_pk = store.pk
         context['store_pk'] = store_pk
         return redirect( 'ownerApp:register3', store_pk)
     else: #GET Method
