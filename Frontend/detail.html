@@ -1,40 +1,78 @@
-{% extends 'base.html' %}
-{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" type="text/css" href="detail.css">
+</head>
+<body>
+    <!--nav-->
+<div class="wrap">
+    <div class="intro">
+        <div class="header">
+            <ul class="nav">
+                <li><a href="#">솥</a></li>
+                <li><a href="#">스토어</a></li>
+                <li><a href="#">커뮤니티</a></li>
+                <li><a href="#">고객센터</a></li>
+                
 
-{% block style %}
-{% endblock %}
-
-{% block content %}
-    <h1>음식점 상세 페이지 입니다.</h1>
-    <div>
-        {{object.name}}<br>
-        {{object.stle}}<br>
-        리뷰 수 : {{object.review}} <br>
-        별점 : {{object.star}} <br>
-        위치추가하기 + 데이터 수집<br>
-    </div>
-    <br>
-    <div>
-        <a href="{% url 'userApp:reservation' object.pk %}">즐겨찾기등록</a>
-    </div>
-    <br>
-    <div>
-        <h3>메뉴</h3>
-        <div>
-            <h5>음식이름</h5>
-            10000원
-            <button>장바구니</button>
-            <button>바로결제</button>
+            </ul>
+            <ul class="searcharea">
+                <li><input type="search" placeholder="Serach.."></li>
+                <li><a href="#"><img src="cart.svg"></a></li>
+                <li><a href="#"><img src="mypage.svg"></a></li>
+            </ul>
         </div>
     </div>
-    <br>
-    <div>
-        <h3>리뷰</h3>
-        <div>
-            홍길동  별 3.5<br>
-            알리오올리오가 맛있어요. <br>
+</div>
+<!--main-->
+    <div class="background">
+
+        <div class="rice">
+            <img src="rice22.png">
+        </div>
+        <div class="backcolors">
+            <img src="back white.svg">
+
+            
+            <div class="category">
+                <a href="#"><img src="category.svg"></a>
+            </div>
+           <div class="title">
+            <h1>유기농 우리쌀 도정예약</h1>
+           </div>
+           <div class="star">
+            <img src="star4.svg">
+           </div>
+           
+           <div class="price">
+            <h1>32,000원</h1>
+           </div>
+           <div class="reserve">
+                <img src="75.svg">
+           </div>
+           <div class="heart">
+                <img src="heart.svg">
+           </div>
+           <div class="cart">
+            <a href="#"><img src="cartt.svg"></a>
+            <h1>장바구니</h1>
+           </div>
+           
+          
+    </div>
+        <div class="first">
+            <img src="first.png">
+        </div>
+        <div class="second">
+            <img src="second.png">
+        </div>
+        <div class="page">
+            <img src="page.png">
         </div>
     </div>
-    <br>
-
-{% endblock %}
+    <div class="finish">
+        <img src="finish.png">
+    </div>
+    
+</body>
+</html>
