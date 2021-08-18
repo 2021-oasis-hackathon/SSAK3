@@ -28,7 +28,8 @@ class Store(models.Model):
 class Product(models.Model):
     store = models.ForeignKey(Store, on_delete=models.CASCADE)
     name =  models.CharField(max_length=30)
-    price = models.FloatField()
+    # price = models.FloatField()
+    price = models.IntegerField()
     intro = models.TextField()
     Thumbnail = models.ImageField(upload_to='thumimg', null=True)
     introImage = models.ImageField(upload_to='productimg', null=True)

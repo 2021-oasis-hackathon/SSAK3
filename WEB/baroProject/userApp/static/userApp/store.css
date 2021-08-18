@@ -181,3 +181,11 @@
     flex-wrap: wrap;
 }
 
+.intro{
+    background-image:url("../../../static/img/mainb.png");
+    background-size:cover;
+    width:1920px;
+    height:640px;
+   
+    
+}
