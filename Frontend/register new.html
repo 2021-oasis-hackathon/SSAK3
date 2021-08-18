@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="register new.css">  
+{% block style %}
+{% endblock %}
+
+{% block content %}
+    <h1>ownerApp 판매자 등록</h1>
+    <section class="login">
+    <h2>스토어 정보 입력</h2>
+    <form action="{% url 'ownerApp:register2' %}" method="POST">
+        {%csrf_token%}
+        <ul>
+            <div class="line1">
+        <li>스토어이름
+        <input type="text" name="store_name" required><br></li>
+        <li>스토어 url
+        <input type="text" name="store_url" required><br></li>
+        <li>소개글
+        <input type="text" name="store_intro" required><br></li>
+        <li>고객센터 전화번호
+        <input type="text" name="store_tel" required><br></li>
+        <li>상품 카테고리
+        <select name="category" required>
+            <option value="채소/야채">채소/야채</option>
+            <option value="과일">과일</option>
+            <option value="곡류">곡류</option>
+        </select><br></li>
+    </div><!--line1-->
+    <div class="line2">
+        <li>배송정보 입력
+        <input type="text" name="store_address" required><br></li>
+        <li>정산 입금 계좌
+        <select name="bank" required>
+            <option value="농협">농협</option>
+            <option value="국민">국민</option>
+            <option value="신한">신한</option>
+            <option value="기타">기타</option>
+        </select></li>
+        <li><input type="text" name="account_name" required placeholder="예금주명"/></li>
+        <li><input type="text" name="store_account" required placeholder="계좌번호"><br></li>
+    </div>
+        <div class="button1">
+        <li><button type="submit"><h5>스토어 개설</h5></button></li>
+    </div>
+    </form>
+
+</ul>
+</section>
+
+{% endblock %}

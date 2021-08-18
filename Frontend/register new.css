@@ -1,0 +1,68 @@
+*{
+    list-style:none;
+    text-decoration:none;
+    border-collapse:collapse;
+    margin:0px;
+    padding:0px;
+}
+.login{
+    width:1030px;;
+    height:1300px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border:1px solid white;
+    box-shadow: 0px 7px 20px #00000029;
+}
+.login h2{
+    font-size:32px;
+    color:black;
+    border-bottom: 3px solid #707070 ;
+    text-align:center;
+    padding:15px 0 15px;
+    
+    
+}
+.login li{
+    padding:0 0 60px;
+    
+}
+.login li input{
+    border-color:white;
+    
+    width:700px;
+}
+.login li{
+   margin-left:20px;
+   margin-top:20px;
+}
+.line1{
+    border:2px solid #707070;
+    width:900px;
+    height:500px;
+    margin:auto;
+}
+.line2{
+    border:2px solid #707070;
+    width:900px;
+    height:400px;
+    margin:auto;
+    margin-top:40px;
+    
+}
+.button1 button{
+    background: var(--unnamed-color-629dd9) 0% 0% no-repeat padding-box;
+background: #629DD9 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px #00000029;
+border-radius: 38px;
+opacity: 1;
+width: 327px;
+height: 76px;
+margin-left:350px;
+margin-top:70px;
+}
+.button1 h5{
+    color:white;
+    font-size:25px;
+}
