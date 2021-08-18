@@ -20,6 +20,8 @@
 * 선주문 방식을 도입해 판매자의 위험부담 감소
 
 #### 시연영상
+https://www.youtube.com/watch?v=b3APhAzqMD4&feature=youtu.be     
+https://www.youtube.com/watch?v=ucPmBsM0g5g
 
 
 #### 개발환경
