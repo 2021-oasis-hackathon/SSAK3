@@ -11,15 +11,18 @@
 <div class="second">
     <div><img src="{% static 'img/t.png' %}"></div>
     <div class="sss5">
-        <form action="" method="POST">
-            <input type="text" name="searchText" class="searchArea" placeholder="Search ... ">
+        <form action="{% url 'userApp:store' %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="searchText" class="searchArea" placeholder="#여자 #20대 #피곤 ">
             <button type="submit" id="search">검색</button>
         </form>
     </div>
     
 </div>
 <div class="third">
-    <img src="{% static 'img/fff.png' %}">
+    {% if sText %}
+    {{sText}} 의 판매량 순 결과입니다.
+    {% endif %}
 </div>
 
 
@@ -27,6 +30,37 @@
 
 <!--2-->
 <div class="page">
+    <div class="sCbox">
+        {% for pro in products %}
+        <div class="tomato5">
+            <a href="{% url 'userApp:detail' pro.pk %}">
+                <div class="image1">
+                    {% if pro.Thumbnail  %}
+                    <img src="../../..{{pro.Thumbnail.url}}" style="width: 342px;height: 249px;" alt=""><br></div>
+                    {% else %}
+                    <img src="../../../static/img/ThumbnailSOT.png" style="width: 342px;height: 249px;" alt=""><br></div>
+                    
+                    {% endif %}
+                <div class="name">
+                    <div class="title_z">
+                        <div id1="minititle">{{pro.name}}</div></div>
+                    <div class="miniamount">
+                        <div id2="miniamount">{{pro.amount}}</div></div>
+                </div>
+                <div class="star">
+                    <img src="../../../static/img/star 8.svg" alt=""></div>
+                <div class="price">
+                    <div class="price1">
+                        <div>{{pro.price}}원</div></div>
+                    <div class="reserve1">
+                        <div><img src="../../../static/img/75.svg"></div></div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+
     <ul class="icon">
         <li><a href="#"><img src="{% static 'img/tomato.png' %}"></a></li>
         <li><a href="#"><img src="{% static 'img/rice.png' %}"></a></li>

@@ -68,7 +68,101 @@ def pay(request, pay):
 
 def store(request):
     context={}
-    return render(request, 'userApp/store.html', context)
+
+    if request.method == "POST":
+        sText = request.POST['searchText']
+        context['sText']=sText
+        #여자 #10대 #피곤
+        gender, age, health = sText.split(' ')
+        gender = gender.replace('#', '')
+        age = age.replace('#', '')
+        health = health.replace('#', '')
+
+        FITERLIST=[(1, '-age1_M_B'),(2, '-age1_M_W'),(3, '-age1_M_G'),
+                    (4, '-age1_W_B'),(5, '-age1_W_W'),(6, '-age1_W_G'),
+                    (7, '-age2_M_B'),(8, '-age2_M_W'),(9, '-age2_M_G'),
+                    (10, '-age2_W_B'),(11, '-age2_W_W'),(12, '-age2_W_G'),
+                    (13, '-age3_M_B'),(14, '-age3_M_W'),(15, '-age3_M_G'),
+                    (16, '-age3_W_B'),(17, '-age3_W_W'),(18, '-age3_W_G'),
+                    (19, '-age4_M_B'),(20, '-age4_M_W'),(21, '-age4_M_G'),
+                    (22, '-age4_W_B'),(23, '-age4_W_W'),(24, '-age4_W_G'),]
+        
+
+        #나이 
+        if age=="10대":
+            if gender=="여자":
+                if health=="good":
+                    fkey=FITERLIST[6-1][1]
+                elif health=="worry":
+                    fkey=FITERLIST[5-1][1]
+                elif health=="bad":
+                    fkey=FITERLIST[4-1][1]
+            elif gender=="남자":
+                if health=="good":
+                    fkey=FITERLIST[3-1][1]
+                elif health=="worry":
+                    fkey=FITERLIST[2-1][1]
+                elif health=="bad":
+                    fkey=FITERLIST[1-1][1]
+        elif age=="20대" or age=="30대":
+            if gender=="여자":
+                if health=="good":
+                    fkey=FITERLIST[12-1][1]
+                elif health=="worry":
+                    fkey=FITERLIST[11-1][1]
+                elif health=="bad":
+                    fkey=FITERLIST[10-1][1]
+            elif gender=="남자":
+                if health=="good":
+                    fkey=FITERLIST[9-1][1]
+                elif health=="worry":
+                    fkey=FITERLIST[8-1][1]
+                elif health=="bad":
+                    fkey=FITERLIST[7-1][1]
+        elif age=="40대" or age=="50대":
+            if gender=="여자":
+                if health=="good":
+                    fkey=FITERLIST[18-1][1]
+                elif health=="worry":
+                    fkey=FITERLIST[17-1][1]
+                elif health=="bad":
+                    fkey=FITERLIST[16-1][1]
+            elif gender=="남자":
+                if health=="good":
+                    fkey=FITERLIST[15-1][1]
+                elif health=="worry":
+                    fkey=FITERLIST[14-1][1]
+                elif health=="bad":
+                    fkey=FITERLIST[13-1][1]
+        elif age == "60대":
+            if gender=="여자":
+                if health=="good":
+                    fkey=FITERLIST[24-1][1]
+                elif health=="worry":
+                    fkey=FITERLIST[23-1][1]
+                elif health=="bad":
+                    fkey=FITERLIST[22-1][1]
+            elif gender=="남자":
+                if health=="good":
+                    fkey=FITERLIST[21-1][1]
+                elif health=="worry":
+                    fkey=FITERLIST[20-1][1]
+                elif health=="bad":
+                    fkey=FITERLIST[19-1][1]
+        else :
+            #전체판매량
+            fkey = '-salesRate'
+
+        print(fkey)
+        products = Product.objects.all().order_by(fkey)[:9]
+        context['products'] = products
+        print(products)
+        print("POST")
+        return render(request, 'userApp/store.html', context)
+    else :
+        products = Product.objects.all()[:9]
+        context['products'] = products
+        return render(request, 'userApp/store.html', context)
 
 def accFinish(request):
     return render(request, 'userApp/accFinish.html')

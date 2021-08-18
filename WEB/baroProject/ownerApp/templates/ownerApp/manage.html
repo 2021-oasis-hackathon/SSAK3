@@ -22,7 +22,11 @@
             {% if products %}
                 {% for pro in products %}
                     <div style="background-color: darkorange;">
+                        {% if pro.Thumbnail %}
                         <div><img src="../../..{{pro.Thumbnail.url}}"></div>
+                        {% else %}
+                        <div><img src="{% static 'img/ThumbnailSOT.png' %}"></div>
+                        {% endif %}
                         <div>{{pro.name}} | {{pro.salesRate}}</div>
                         <div>주문현황</div>
                     </div>

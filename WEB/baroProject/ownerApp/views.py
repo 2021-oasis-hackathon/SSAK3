@@ -57,7 +57,7 @@ def manage(request):
     if store == None:
         return redirect("ownerApp/main")
     
-    products =  Product.objects.all()[:5]
+    products =  Product.objects.filter(store = store)[:10]
     context['products'] = products
     context['store'] = store
 

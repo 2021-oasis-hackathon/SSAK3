@@ -11,6 +11,7 @@
     margin:auto;
     display: flex;
     justify-content: center;
+    font-size: 30px;
 }
 .sss5{
     display: flex;
@@ -37,7 +38,8 @@
 .page{
     
     width: 1915px;
-    height: 1900px;
+    /* height: 1900px; */
+    height: 3500px;
     background-color:#F5F5F5; 
     opacity: 1;
 }
@@ -115,5 +117,67 @@
 .tomato2{
     margin-top:200px;
 }
-
+.name{
+    display:flex;
+    
+}
+.image1{
+    margin-top:25px;
+    margin-left:17px;
+}
+.title_z{
+    font-size:24px;
+    margin-left:40px;
+    margin-top:10px;
+    color:#585858;
+    font-weight:bolder;
+}
+.miniamount{
+    margin-left:20px;
+    margin-top:14px;
+    color:gray;
+    font-size:14px;
+}
+.star{
+    margin-top:5px;
+    margin-right:200px;
+    margin-left: 35px;
+    
+}
+.reserve1{
+   
+   
+}
+.price1{
+    color:#629dd9;
+    font:bolder;
+    font-size:35px;
+    margin-top:20px;
+    margin-left:35px;
+    
+   
+}
+.price{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+}
+.tomato5{
+    background-image:url("../../../static/img/squarewhite.svg ");
+    background-repeat: no-repeat;
+    height:486px;
+    width: 418px;
+    margin-top:50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sCbox{
+    display: flex;
+    width: 1300px;
+    justify-content: center;
+    margin-left: 323px;
+    flex-wrap: wrap;
+}
 
