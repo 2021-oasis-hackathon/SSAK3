@@ -75,9 +75,12 @@
 }
 .reee{
     background-image: url("../../../static/img/arrive.png");
+    background-repeat: no-repeat;
+    width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-right: 30px;
 }
 
 .price{
@@ -172,11 +175,10 @@
     height: 50px;
 }
 .three h7{
-    margin-left:410px;
-    margin-top:-200px;
+    
 }
 .three h8{
-    margin-left:415px;
+    
     
 }
 .intro{
@@ -197,3 +199,4 @@
 span{
     padding-left: 30px;
 }
+

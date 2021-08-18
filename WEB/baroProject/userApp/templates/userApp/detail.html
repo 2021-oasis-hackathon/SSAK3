@@ -40,7 +40,7 @@
                        <b>{{object.deliveryOption}}</b>
                        <div class="mbinfo3">
                             <div class="reee">
-                                {{object.deliveryD1}} ~ {{object.deliveryD2}}
+                                {{object.deliveryD1  | date:'y/n/j' }} ~ {{object.deliveryD2 | date:'y/n/j' }}
                             </div>
                             <img src="{% static 'img/reserve short.png' %}">
                        </div>
@@ -71,12 +71,14 @@
                         <h7><img src="{% static 'img/reserve long.png' %}" alt="예약"></h7>
                         <h8><button type = submit><img src="{% static 'img/cart button.png' %}" alt="장바구니"></button></h8>
                         <input type="hidden" name="od_deliopt" value={{object.deliveryOption}} > -->
-                        <span class="hot">{{object.amount}}</span> 
-                        <span id="input_a"><input type="date" name="od_date" min={{object.deliveryD1}}, max={{object.deliveryD2}} required>개</span><br>
+                        <span class="hot">{{object.amount}} : </span> 
+                        <span id="input_a"><input type="number" name="od_amount" min = 1 required>개</span><br><br>
+                        <span><img src="{% static 'img/check_blue.svg' %}" alt="">택배 배송</span>
+                        <span><img src="{% static 'img/check_gray.svg' %}">직거래</span><br><br>
                         <span>*희망 발송일 설정은 예상 배송 기간 이후로 설정 가능합니다.</span><br><br>
-                        <span id="input_b">희망배송일 : <input type="number" name="od_amount" min = 1 required></span><br>
-                        <h7><img src="{% static 'img/reserve long.png' %}" alt="예약"></h7>
-                        <h8><button type = submit><img src="{% static 'img/cart button.png' %}" alt="장바구니"></button></h8>
+                        <span id="input_b">희망배송일 :<input type="date" name="od_date" min={{object.deliveryD1}}, max={{object.deliveryD2}} required> </span><br><br>
+                        <span><img src="{% static 'img/reserve long.png' %}" alt="예약"></span>
+                        <span><button type = submit style="border-color:white;"><img src="{% static 'img/cart button.png' %}" alt="장바구니"></button></span>
                         <input type="hidden" name="od_deliopt" value={{object.deliveryOption}} >
                     </form>
                 </li>
