@@ -1,62 +1,84 @@
-<!doctype html>
-<html lang="ko">
-<head>
-    <link rel="stylesheet" type="text/css" href="store.css">
-</head>
-<body>
-    <div class="wrap">
-        <div class="intro">
-            <div class="header">
-                <ul class="nav">
-                    <li><a href="#">솥</a></li>
-                    <li><a href="#">스토어</a></li>
-                    <li><a href="#">커뮤니티</a></li>
-                    <li><a href="#">고객센터</a></li>
-                    
+{% extends 'base2.html' %}
+{% load static %}
 
-                </ul>
-                <ul class="searcharea">
-                    <li><input type="search" placeholder="Serach.."></li>
-                    <li><a href="#"><img src="cart.svg"></a></li>
-                    <li><a href="#"><img src="mypage.svg"></a></li>
-                </ul>
-            </div>
-        </div>
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'userApp/store.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!--임시-->
+<div class="second">
+    <div><img src="{% static 'img/t.png' %}"></div>
+    <div class="sss5">
+        <form action="{% url 'userApp:store' %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="searchText" class="searchArea" placeholder="#여자 #20대 #피곤 ">
+            <button type="submit" id="search">검색</button>
+        </form>
     </div>
-    <!--임시-->
-    <div class="second">
-        <img src="t.png">
-    </div>
-    <div class="third">
-        <img src="fff.png">
-    </div>
-
-    <!--2-->
-    <div class="page">
-        <ul class="icon">
-            <li><a href="#"><img src="tomato.png"></a></li>
-            <li><a href="#"><img src="rice.png"></a></li>
-            <li><a href="#"><img src="egg.png"></a></li>
-
-        </ul>
-        <ul class="icon1">
-            <li><div class="rice"><a href="#"><img src="mushroom.png"></a></div></li>
-            <li><div class="cheese"><a href="#"><img src="oil.png"></a></div></li>
-            <li><div class="tomato"><a href="#"><img src="cheese.png"></a></div></li>
-
-        </ul>
-        <ul class="icon2">
-            <li><div class="rice2"><a href="#"><img src="melon1.png"></a></div></li>
-            <li><div class="cheese2"><a href="#"><img src="account1.png"></a></div></li>
-            <li><div class="tomato2"><a href="#"><img src="apple.png"></a></div></li>
-
-        </ul>
-
-    </div>
-    <div class="zz">
-        <img src="zz.png">
-       </div>
     
-   
-</body>
-</html>
+</div>
+<div class="third">
+    {% if sText %}
+    {{sText}} 의 판매량 순 결과입니다.
+    {% endif %}
+</div>
+
+
+
+
+<!--2-->
+<div class="page">
+    <div class="sCbox">
+        {% for pro in products %}
+        <div class="tomato5">
+            <a href="{% url 'userApp:detail' pro.pk %}">
+                <div class="image1">
+                    {% if pro.Thumbnail  %}
+                    <img src="../../..{{pro.Thumbnail.url}}" style="width: 342px;height: 249px;" alt=""><br></div>
+                    {% else %}
+                    <img src="../../../static/img/ThumbnailSOT.png" style="width: 342px;height: 249px;" alt=""><br></div>
+                    
+                    {% endif %}
+                <div class="name">
+                    <div class="title_z">
+                        <div id1="minititle">{{pro.name}}</div></div>
+                    <div class="miniamount">
+                        <div id2="miniamount">{{pro.amount}}</div></div>
+                </div>
+                <div class="star">
+                    <img src="../../../static/img/star 8.svg" alt=""></div>
+                <div class="price">
+                    <div class="price1">
+                        <div>{{pro.price}}원</div></div>
+                    <div class="reserve1">
+                        <div><img src="../../../static/img/75.svg"></div></div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <ul class="icon">
+        <li><a href="#"><img src="{% static 'img/tomato.png' %}"></a></li>
+        <li><a href="#"><img src="{% static 'img/rice.png' %}"></a></li>
+        <li><a href="#"><img src="{% static 'img/egg.png' %}"></a></li>
+
+    </ul>
+    <ul class="icon1">
+        <li><div class="rice"><a href="#"><img src="{% static 'img/mushroom.png' %}"></a></div></li>
+        <li><div class="cheese"><a href="#"><img src="{% static 'img/oil.png' %}"></a></div></li>
+        <li><div class="tomato"><a href="#"><img src="{% static 'img/cheese.png' %}"></a></div></li>
+
+    </ul>
+    <ul class="icon2">
+        <li><div class="rice2"><a href="#"><img src="{% static 'img/melon1.png' %}"></a></div></li>
+        <li><div class="cheese2"><a href="#"><img src="{% static 'img/account1.png' %}"></a></div></li>
+        <li><div class="tomato2"><a href="#"><img src="{% static 'img/apple.png' %}"></a></div></li>
+
+    </ul>
+
+</div>
+{% endblock %}

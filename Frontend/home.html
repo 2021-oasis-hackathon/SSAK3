@@ -1,68 +1,34 @@
-<!doctype html>
-<html lang="ko">
-    <head>
-        <link rel="stylesheet" href="../../static/userApp/home.css" type="text/css">
-        <script src="https://kit.fontawesome.com/b0f29e9bfe.js" corssorigin="anonymous"></script>
-    </head>
-    <body>
+{% extends 'base2.html' %}
+{% load static %}
 
-        <div class="wrap">
-            <div class="intro_bg">
-                <div class="header">
-                   
-                    <ul class="nav">
-                        {% if user.is_authenticated %}
-                        <!-- 로그인 한 사용자 -->
-                        <li>
-                            <form action="{% url 'accountApp:logout' %}" method="POST">
-                                {% csrf_token %}
-                                <input type="hidden" name="path" value="{{request.path}}">
-                                <button id = logout type = submit>Log out</a>
-                            </form>
-                        </li>
-                        <li><a href="#"><i class="fas fa-bars"></i></a></li>
-                        {% else %}
-                        <!--로그인 안 한 사용자-->
-                        <li><a href="{% url 'userApp:home' %}">Log in</a></li>
-                        <li><a href="{% url 'accountApp:signup' %}">Sign up</a></li>
-                        <li><a href="#"><i class="fas fa-bars"></i></a></li>
-                        {% endif %}
-                    </ul>
-                </div>
-                <div class="intro_text">
-               
+{% block style %}
+<link rel="stylesheet" href="../../static/userApp/home.css" type="text/css">
+{% endblock %}
 
-                <h1>회원 유형을 선택해 주세요 test</h1>
-                <h4>유형을 선택하시면 솥에서 제공하는 다양한 서비스를 이용하실 수 있습니다.</h4>
-            </div>
+{% block content2 %}
+<h1>회원 유형을 선택해 주세요</h1>
+<br><br>
+<h4>유형을 선택하시면 솥에서 제공하는 다양한 서비스를 이용하실 수 있습니다.</h4>
+{% if error %} <br>{{ error }} {% endif %}
+{% endblock %}
 
-           
+{% block content %}
+    
+    <ul class="icons">
+        <li>
+             <div class="icon_img"></div>
+             <div class="content_bold"><a class="name" href="{%  url 'accountApp:login' 1 %}">판매자</a></div>
+             <i class="fas fa-minus"></i>
+             <div class="content2">판매자는 솥을 통해 수요량을 조사하고, 신선한 농작물을 판매할 수 있습니다.</div>
+         </li>
 
-            /*main_text0*/
         
-            <div class="main_text0">
-               
-               <ul class="icons">
-                   <li>
-                        <div class="icon_img"></div>
-                        <div class="content_bold"><a href="{%  url 'accountApp:login' 1 %}">판매자</a></div>
-                        <i class="fas fa-minus"></i>
-                        <div class="content2">판매자는 솥을 통해 수요량을 조사하고, 신선한 농작물을 판매할 수 있습니다.</div>
-                    </li>
-
-                   
-                   <li>
-                        <div class="icon2_img"></div>
-                        <div class="content_bold"><a href="{%  url 'accountApp:login' 2 %}">구매자</a></div>
-                        <i class="fas fa-minus"></i>
-                        <div class="content2">구매자는 솥을 통해 간편하게 농작물을 주문하고, 갓 생산된 농작물을 받아보실 수 있습니다.</div>
-                    </li>
-               </ul>
-            </div>
-        </div>
-            
-     </div>
-     <a href="" clasas="navbar_tooglBtn"></a>
-     <i class="fas fa-bars"></i>
-    </body>
-</html>
+        <li>
+             <div class="icon2_img"></div>
+             <div class="content_bold"><a class="name" href="{%  url 'accountApp:login' 2 %}">구매자</a></div>
+             <i class="fas fa-minus"></i>
+             <div class="content2">구매자는 솥을 통해 간편하게 농작물을 주문하고, 갓 생산된 농작물을 받아보실 수 있습니다.</div>
+         </li>
+    </ul>
+ 
+{% endblock %}
