@@ -1,42 +1,151 @@
-{% extends 'base.html' %}
 {% load static %}
-
-{% block style %}
-{% endblock %}
-
-{% block content2 %}
-    <h1>판매 스토어 관리</h1>
-    <br>
-    <h4>HElloWorld<h4>
-{% endblock %}
-
-{% block content %}
-<div style="background-color: aliceblue;">
-    <div>상품주문칸</div>
-    <div>배송칸</div>
-    <div>취소/환불/교환</div>
-    <div>정산칸</div>
-    <div>
-        <a href="{% url 'ownerApp:productManage'  store.pk  %}">상품 등록/관리</a>
-        <div>
-            {% if products %}
-                {% for pro in products %}
-                    <div style="background-color: darkorange;">
-                        {% if pro.Thumbnail %}
-                        <div><img src="../../..{{pro.Thumbnail.url}}"></div>
-                        {% else %}
-                        <div><img src="{% static 'img/ThumbnailSOT.png' %}"></div>
-                        {% endif %}
-                        <div>{{pro.name}} | {{pro.salesRate}}</div>
-                        <div>주문현황</div>
-                    </div>
-                    <br>
-                {% endfor %}
-            {% else %}
-                등록된 상품이 없습니다.
-            {% endif %}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>솥 by SSAK3</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'ownerApp/manage.css' %}">
+    <script src="https://kit.fontawesome.com/b0f29e9bfe.js" corssorigin="anonymous"></script>
+    {% block style %}
+    {% endblock %}
+</head>
+<body>
+<!--  -->
+    <div class="wrap">
+        <div class="intro">
+            <div class="header">
+                <ul class="nav">
+                    <li><a href="{% url 'userApp:main' %}"><img src="{% static 'img/SOT_logo.png' %}"></a></li>
+                    <li><a href="{% url 'userApp:store' %}">스토어</a></li>
+                    <li><a href="#">커뮤니티</a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+                <ul class="searcharea">
+                    {% if user.is_authenticated %}
+                    <!-- 로그인 한 사용자 -->
+                    <li>
+                        <form action="{% url 'accountApp:logout' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="path" value="{{request.path}}">
+                            <button id = logout type = submit>Log out</a>
+                        </form>
+                    </li>
+                    {% endif %}
+                    <li><input type="search" placeholder="Serach.."></li>
+                    <li><a href="{% url 'userApp:cart' %}"><img src="{% static 'img/cart.svg' %}"></a></li>
+                    <li><a href="{% url 'userApp:home' %}"><img src="{% static 'img/mypage.svg' %}"></a></li>
+                </ul>
+            </div>
+            <div class ="title">
+                {% block content2 %}
+                {% endblock %}
+            </div>
         </div>
     </div>
-</div>
-{% endblock %}
+    <!--  -->
+    <div style="display: flex; flex-direction: column; background-color: #f5f5f5;">
+        <img src="{% static 'img/mystore.png' %}" style="margin-left: 350px; width: 350px;">
+        <div class="big_container">
+            <!-- 왼쪽 -->
+            <div class="left_c">
+                <div class="storeInfo">
+                    <div id="store_title"><b>{{store.store_name}}</b></div>
+                    <div id="store_cate">{{store.category}}</div>
+                    <div id="store_intro">{{store.store_intro}}</div>
+                </div>
+                <img src="{% static 'img/sm_1.png' %}" alt="" style="width: 715px;height: 432px;">
+                <img src="{% static 'img/sm_2.png' %}" alt="" style="width: 715px;height: 352px;">
+                <div class="storeInfo2">
+                    <div class="mimititle"><b>판매자정보</b></div>
+                    <div style="padding-left: 15px;"><b>고객센터</b>   {{store.store_tel}}</div>
+                    <div style="padding-left: 15px;"><b>주소</b>   {{store.store_address}}</div>
+                    <div class="accInfo">
+                        <b>계좌정보</b>
+                        <span>{{store.bank}}</span>
+                        <span>{{store.account_name}}</span>
+                        <span>{{store.store_account}}</span>
+                    </div>
+                </div>
+            </div>
+            <!-- end 왼쪽 -->
+            <!-- 오른쪽 -->
+            <div class="rignt_c">
+                <div class="edPros">
+                    <div class="mimititle"><b>등록된 상품 관리</b></div>
+                    {% if products %}
+                        {% for pro in products %}
+                        
+                            <div class="ppobox">
+                                {% if pro.Thumbnail %}
+                                <div class="ppoThumb"><img src="../../..{{pro.Thumbnail.url}}" style="width: 100%;height: 100%;"></div>
+                                {% else %}
+                                <div class="ppoThumb"><img src="{% static 'img/ThumbnailSOT.png' %}"></div>
+                                {% endif %}
+                                <!-- Thumbnail -->
+                                <div class="ppoInfo">
+                                    <div class="ppIname"><b>{{pro.name}}</b></div>
+                                    <div class="ppoInfoIn">
+                                        <div class="ppoInfoInIn">
+                                            <span>{{pro.category}}</span>
+                                            <img src="{% static 'img/star 8.svg' %}" alt="">
+                                            <span>{{pro.price}} / {{pro.amount}}</span>
+                                        </div>
+                                        <img src="{% static 'img/75.svg' %}" alt="">
+                                    </div>
+    
+                                </div>
+                            </div>
+                        
+                        {% endfor %}
+                    {% else %}
+                        등록된 상품이 없습니다.
+                    {% endif %}
+                </div>
+                <!-- productsend -->
+                <div class="regiPro">
+                    <div class="mimititle"><b>상품등록</b></div>
+                    <div class="Pro_form">
+                        <form action="{% url 'ownerApp:productManage' store.pk %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="Tbutton">
+                                <input type="text" name="name" required placeholder="상품명" style="width: 350px;">
+                                <button type="submit" id="Kai">상품등록</button>
+                            </div><br>
+                            이미지등록 <input type="file" name="Thumbnail"><br><br>
+                            상품카테고리
+                            <select name="category" required>
+                                <option value="과일">과일</option>
+                                <option value="채소/야채">채소/야채</option>
+                                <option value="곡류">곡류</option>
+                                <option value="기타">기타</option>
+                            </select><br><br>
+                            예상수확량<br>
+                            <input type="text" name="expect"><br><br>
+                            판매가<br>
+                            <input type="number" required name="price"> 원 / <input type="text" name="amount"> (기준량)<br><br>
+                            예상수확시기<br>
+                            <input type="date" name="expectD1" required> ~ <input type="date" name="expectD2" required><br><br>
+                            배송가능기간<br>
+                            <input type="date" name="deliveryD1" required> ~ <input type="date" name="deliveryD2" required><br><br>
+                            포장방식
+                            <select name="deliveryOption" required>
+                                <option value="아이스팩">아이스팩</option>
+                                <option value="신선배송가방">신선배송가방</option>
+                            </select><br><br>
+                            출하지역<br>
+                            <input type="text" name="region" style="width: 300px;"><br><br>
+                            소개글<br><textarea name="intro_text" style="width: 350px;"></textarea><br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- end오른쪽 -->
+        </div>
+        <!--bigcontainer  -->
+        <div class="zz">
+            <img src="{% static 'img/zz.png' %}">
+        </div>
+    </div>
+    
+</body>

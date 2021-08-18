@@ -60,8 +60,8 @@ def login(request, usertype):
                     print("유저홈")
                     return redirect('userApp:home')
                 elif usertype == 1: #생산자
-                    print("생산자 메인")
-                    return redirect('ownerApp:main')
+                    print("생산자 manage")
+                    return redirect('ownerApp:manage')
                 elif usertype == 2: #소비자
                     print("유저홈")
                     return redirect('userApp:main')

@@ -1,15 +1,30 @@
-{% extends 'base.html' %}
+{% extends 'ownerbase.html' %}
 {% load static %}
 
 {% block style %}
+<style>
+    .background{
+    /* background-color:#F5F5F5; */
+    background-image: url('../../../static/img/start.jpg');
+    width:1920px;
+    height:1500px;
+    margin-top:-550px;
+    background-repeat: no-repeat;
+}
+.front{
+    margin-left:800px;
+    padding-top:450px
+    
+}
+</style>
 {% endblock %}
 
 {% block content %}
-    <h1>ownerapp 첫 화면 입니다.</h1>
-    <div>
-        <a href="{% url 'ownerApp:register' %}">판매자 등록</a>
-        <a href="{% url 'ownerApp:manage' %}">판매 스토어 관리</a>
-        <a href="{% url 'ownerApp:help' %}">농산물 생산지원 기능</a>
+<div class="background">
+    <div class="back">
+        <div class="front">
+            <a href="{% url 'ownerApp:register2' %}"><img src="{% static 'img/start button.png' %}"></a>
+        </div>
     </div>
-
+</div>
 {% endblock %}

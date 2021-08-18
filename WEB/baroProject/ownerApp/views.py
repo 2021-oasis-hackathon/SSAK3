@@ -52,12 +52,13 @@ def register3(request, store_pk):
 
 def manage(request):
     context={}
-    store = Store.objects.get(user=User.objects.get(username = request.user.get_username()))
-    print(store)
-    if store == None:
-        return redirect("ownerApp/main")
+    try:
+        store = Store.objects.get(user=User.objects.get(username = request.user.get_username()))
+        print(store)
+    except Store.DoesNotExist:
+        return redirect("ownerApp:main")
     
-    products =  Product.objects.filter(store = store)[:10]
+    products =  Product.objects.filter(store = store)[:3]
     context['products'] = products
     context['store'] = store
 

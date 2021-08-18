@@ -40,7 +40,11 @@
                     <img src="../../../static/img/consumerlogin2.png">
                     {% endif %}
                </div>
+               
+              
                 <div class="service">
+                    
+                    
                     <ul>  
                         <li><input type="text" id = 'username' placeholder="아이디" name="username"></li>
                         <li><input type="password" id='password' placeholder="비밀번호" name="password"></li>
@@ -49,11 +53,14 @@
                             아직 회원이 아니신가요?
                             <a href="{% url 'accountApp:signupAgree' %}">Signup Now</a>
                         </div>
+                    
                     </ul>
                     
                 </div>
 
             </div>
+            <div class="logo">
+                <img src= "{% static 'img/sot_logo.png' %}"></div>
             {% if usertype == 1 %}
                 <input type= "hidden" name="usertype" value=1>
             {% elif usertype == 2 %}

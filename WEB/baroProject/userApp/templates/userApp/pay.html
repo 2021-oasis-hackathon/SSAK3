@@ -1,23 +1,52 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 {% load static %}
 
 {% block style %}
+<link rel="stylesheet" href="{% static 'userApp/pay.css' %}" type="text/css">
 {% endblock %}
 
 {% block content2 %}
-<h1>결제페이지</h1>
-<br><br>
-<h4>HeIIo</h4>
 {% endblock %}
 
 {% block content %}
-<div class="box" style="background-color: aliceblue;">
-    
-    <div>
-        배송지 정보 입력칸
-    </div>
-    <div>
-        <button>{{pay}}원 결제하기</button>
-    </div>
-</div>
+<!--main-->
+    <div class="background">
+        
+        <div class="navi">
+            <img src="{% static 'img/finish_nav.png' %}">
+        </div>
+        <ul class="icon">
+            <li><img src="{% static 'img/finish_order.png' %}">
+               <div class="category2">
+                <img src="{% static 'img/optbutton.png' %}">
+                <h1>곡식</h1>
+               </div>
+               <div class="name">
+               <h2>유기농 우리쌀 도정예약</h2>
+                <h3>10kg (kg당 3,200원)</h3>
+                <h4>선택옵션: 2021년 8월 24일 이후 발송, 택배 배송(진공포장)</h4>
+                <h5>32,000원</h5>
+            </div>
+            </li><!--첫번째ul-->
+            
+            <li><img src="{% static 'img/finish_confirm.png' %}">
+                <div class="price1">
+                    <h6>9,600원</h6>
+                  
+                 
+                <div class="credit">
+                    <a href="{% url 'userApp:accFinish' %}"><img src="{% static 'img/credit.png' %}"></a>
+                </div>
+                <div class="pprice">
+                    <h7>9,600원</h7>
+                </div>
+                <div class="ppprice">
+                    <h8>+0원</h8>
+                </div>
+            </li>
+        </ul>
+
+
+    </div><!--회색background-->
+
 {% endblock %}

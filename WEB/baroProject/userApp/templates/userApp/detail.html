@@ -10,7 +10,11 @@
         <div class="maininfocontainer">
             <!-- 썸네일 -->
             <div class="rice">
-                <img src="{% static 'img/rice22.png' %}">
+                {% if object.Thumbnail %}
+                <img src="../../..{{object.Thumbnail.url}}" style="width: 100%;height: 100%;">
+                {% else %}
+                <img src="{% static 'img/ThumbnailSOT3.png' %}">
+                {% endif %}
             </div>
             <!-- 인포 -->
             <div class="mainmaininfo">
@@ -53,8 +57,7 @@
         <!--  -->
         <div class="first">
             <ul class="three">
-                <li><img src="{% static 'img/firstsecond.png' %}">
-                    <h1>우리미 쌀 농장</h1>
+                <li><img src="{% static 'img/graph.png' %}">
                 </li>
                 <li> 
                     <form action="{% url 'userApp:addCart' object.pk %}" method="POST">

@@ -1,0 +1,249 @@
+*{
+    list-style:none;
+    text-decoration:none;
+    border-collapse:collapse;
+    margin:0px;
+    padding:0px;
+}
+.intro{
+    /* background-image:url("../static/img/cc.png"); */
+    /* background-size:cover; */
+    background-color: #f5f5f5;
+    width:1920px;
+    height:120px;
+   
+    
+}
+.header{
+    background-color:white;
+    width:1920px;
+    margin:auto;
+    display:flex;
+    height:60px;
+    padding-top:18px;
+}
+.nav{
+    display:flex;
+
+}
+.searcharea{
+    display:flex;
+}
+.nav>li{
+    margin-left:40px;
+}
+.searcharea>li{
+    margin-left:40px;
+
+}
+.searcharea{
+    width: 700px;
+    background-color:white;
+    justify-content:flex-end;
+    line-height:50px;
+    margin-left:300px;
+    
+}
+.nav{
+    background-color:white;
+    width:500px;
+    justify-content:flex-end;
+    margin-left:200px;
+    line-height:50px;
+    
+}
+.nav>li>a{
+    color:gray;
+    font-size:20px;
+    font-weight:bolder;
+}
+.searcharea li input{
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px #00000029;
+border-radius: 12px;
+opacity: 1;
+width: 315px;
+height: 43px;
+border:none;
+
+}
+.a{
+    padding-top: 50px;
+    margin:auto;
+    width: 89px;
+    height: 18px;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding-top: 200px;
+    color: #FFFFFF;
+}
+/*------------------------------------  */
+.big_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+/* left container */
+.left_c{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    width: 750px;
+}
+.storeInfo{
+    width: 715px;
+    height: 320px;
+    /* background-image: url("../../../static/img/box1.svg"); */
+    /* background-size: contain; */
+    background-color: white;
+    border-radius: 3%;
+    box-shadow: 0px 3px 6px #00000029;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+#store_title{
+    font-size: 30px;
+    /* color: ; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#store_cate{
+    background-image: url("../../../static/img/optbutton.png");
+    background-repeat: no-repeat;
+    width: 59px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:20px;
+    color: white;
+}
+#store_intro{
+    color: gray;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+.storeInfo2{
+    width: 700px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 3%;
+    box-shadow: 0px 3px 6px #00000029;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+.mimititle{
+    font-size:30px;
+    font: bold, gray;
+    margin-bottom: 15px;
+}
+.accInfo{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+}
+/* right container */
+.right_c{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.regiPro{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 3%;
+    box-shadow: 0px 3px 6px #00000029;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.edPros{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 3%;
+    box-shadow: 0px 3px 6px #00000029;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.ppobox{
+    display: flex;
+    justify-content: left;
+    width: 505px;
+    height: 150px;
+    margin-bottom: 15px;
+}
+.ppoThumb{
+    width: 120.23px;
+    height: 141.24px;
+    margin-right: 20px;
+}
+.ppoInfo{
+    display: flex;
+    flex-direction: column;
+}
+.ppIname{
+    font-size:20px;
+    margin-bottom: 10px;
+}
+.ppoInfoIn{
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+}
+.ppoInfoInIn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 20px;
+}
+
+.Pro_form{
+    font-size: 20px;
+}
+input{
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px #00000029;
+    border-color: white;
+}
+.Tbutton{
+    display: flex;
+    justify-content: space-between;
+}
+textarea{
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px #00000029;
+    border-color: white;
+}
+#Kai{
+    width: 100px;
+    font-size: 15px;
+    border-radius: 15px;
+    border-color: white;
+    background-color:#629dd9 ;
+    color: white;
+}

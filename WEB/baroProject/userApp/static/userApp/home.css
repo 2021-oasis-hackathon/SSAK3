@@ -52,10 +52,19 @@
 .content2{
     width:284px;
     margin:45px auto;
+    
 }
 
 .icons>li>.icon2_img{
     background-image:url("../../../static/img/ii.jpg");
     background-size: cover;
     height:340px;
+}
+.icons li{
+    color:black;
+    border-radius: 3px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+.name{
+    color:black;
 }

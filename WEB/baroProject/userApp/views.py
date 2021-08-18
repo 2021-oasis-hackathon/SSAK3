@@ -61,9 +61,9 @@ def cart(request):
     context['cart_items'] = cart_items
     return render(request, 'userApp/Cart.html', context)
 
-def pay(request, pay):
+def pay(request):
     context={}
-    context['pay'] = pay
+    # context['pay'] = pay
     return render(request, 'userApp/pay.html', context)
 
 def store(request):
