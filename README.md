@@ -28,3 +28,6 @@ https://www.youtube.com/watch?v=ucPmBsM0g5g
 * Html, css
 * Python, Django, sqlite
 
+#### 제2회 오아시스 해커톤 온라인 부스
+https://salty-devourer-b69.notion.site/E4-ceb814e6ada143399d5d5023c5a2a472
+
